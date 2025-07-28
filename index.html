@@ -746,7 +746,7 @@
             }
             
             /* Navbar mobile */
-            nav ul {
+            nav ul.nav-menu-desktop {
                 display: none; /* Hide desktop nav items */
             }
             .menu-toggle {
@@ -900,8 +900,11 @@
             }
             /* Responsive for schedule cards */
             .schedule-card {
-                min-width: unset;
-                max-width: 100%;
+                /* Đảm bảo card có thể co giãn và không bị tràn */
+                min-width: 80%; /* Cho phép card chiếm phần lớn chiều rộng */
+                max-width: 90%; /* Giới hạn chiều rộng tối đa */
+                margin: 0 auto; /* Căn giữa card nếu cần */
+                scroll-snap-align: center; /* Đảm bảo card căn giữa khi cuộn */
             }
             .schedule-card .card-image {
                 height: 160px; /* Điều chỉnh chiều cao ảnh lịch trình */
@@ -911,6 +914,13 @@
                 padding: 0.5rem 1rem; /* Giảm padding */
                 border-width: 3px; /* Giảm độ dày viền */
             }
+            /* Điều chỉnh card-wrapper cho lịch trình để các card không bị tràn */
+            #schedule-section .card-wrapper {
+                padding: 1rem 10px; /* Thêm padding ngang để card không chạm mép */
+                gap: 1rem; /* Giảm khoảng cách giữa các card */
+                justify-content: flex-start; /* Bắt đầu từ trái, không căn giữa */
+            }
+
             .village-layout-container {
                 gap: 1.5rem; /* Giảm khoảng cách */
                 margin-bottom: 3rem; /* Giảm khoảng cách */
@@ -935,6 +945,12 @@
             }
             header p {
                 font-size: 1.1rem; /* Điều chỉnh kích thước chữ */
+            }
+            nav ul.nav-menu-desktop {
+                display: flex; /* Show desktop nav items */
+            }
+            .menu-toggle, .nav-menu-mobile {
+                display: none; /* Hide hamburger menu and mobile menu */
             }
             nav ul {
                 gap: 1.5rem; /* Điều chỉnh khoảng cách */
@@ -1012,17 +1028,27 @@
                 min-width: 220px; /* Adjust min-width for cards in about section */
                 max-width: 320px;
             }
+            .schedule-card {
+                min-width: 45%; /* Cho phép 2 card trên một hàng nếu đủ không gian */
+                max-width: 48%;
+                margin: 0 1%; /* Khoảng cách giữa các card */
+            }
             .schedule-card .card-image {
                 height: 180px; /* Điều chỉnh chiều cao ảnh lịch trình */
             }
             .card-overlay h3 {
                 font-size: 1.6rem; /* Điều chỉnh kích thước chữ overlay */
             }
+            /* Điều chỉnh card-wrapper cho lịch trình trên tablet */
+            #schedule-section .card-wrapper {
+                padding: 1rem 0; /* Reset padding ngang */
+                justify-content: center; /* Căn giữa các card */
+            }
         }
 
         /* Large devices (desktops, 1200px and up) */
         @media (min-width: 993px) {
-            nav ul {
+            nav ul.nav-menu-desktop {
                 display: flex; /* Show desktop nav items */
             }
             .menu-toggle, .nav-menu-mobile {
@@ -1055,6 +1081,16 @@
             .card-wrapper.village-scroll .card:not(.centered) {
                 min-width: 260px;
                 max-width: 260px;
+            }
+            /* Reset schedule card styles for desktop */
+            .schedule-card {
+                min-width: 300px; /* Kích thước mặc định */
+                max-width: 300px;
+                margin: 0; /* Bỏ margin */
+            }
+            #schedule-section .card-wrapper {
+                padding: 1rem 0; /* Reset padding */
+                justify-content: flex-start; /* Reset justify */
             }
         }
 
