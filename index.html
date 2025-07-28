@@ -6,9 +6,9 @@
     <title>Festival Huế 2025 - Di sản Văn hóa Cố đô</title>
     <style>
         :root {
-            --primary-color: #a00b28;
-            --secondary-color: #f8e5d6;
-            --accent-color: #d4af37;
+            --primary-color: #6A057F; /* Tím Huế đậm */
+            --secondary-color: #F0E6F6; /* Tím Lavender nhạt */
+            --accent-color: #FFD700; /* Vàng Gold */
             --text-color: #333;
             --light-text: #f8f9fa;
         }
@@ -21,7 +21,7 @@
         }
 
         body {
-            background-color: #f9f5f0;
+            background-color: var(--secondary-color); /* Sử dụng màu tím lavender nhạt làm nền */
             color: var(--text-color);
             line-height: 1.6;
         }
@@ -31,29 +31,29 @@
                         url('img/MAIN.jpg') center/cover no-repeat;
             color: var(--light-text);
             text-align: center;
-            padding: 5rem 1rem;
+            padding: 6rem 1rem; /* Tăng padding để tạo không gian */
             margin-bottom: 3rem;
         }
 
         header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 4.5rem; /* Tăng kích thước chữ */
+            margin-bottom: 1.5rem; /* Tăng khoảng cách dưới */
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* Tăng độ nổi bật của shadow */
         }
 
         header p {
-            font-size: 1.2rem;
-            max-width: 800px;
+            font-size: 1.4rem; /* Tăng kích thước chữ */
+            max-width: 900px; /* Tăng chiều rộng tối đa */
             margin: 0 auto;
         }
 
         /* Navbar Styles */
         nav {
             background-color: var(--primary-color);
-            padding: 1rem 0;
+            padding: 1.2rem 0; /* Tăng padding */
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Tăng shadow */
             position: sticky;
             top: 0;
             z-index: 50;
@@ -63,22 +63,88 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 2.5rem; /* Tăng khoảng cách giữa các mục */
         }
 
         nav ul li a {
             color: var(--light-text);
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
+            font-size: 1.2rem; /* Tăng kích thước chữ */
+            padding: 0.6rem 1.2rem; /* Tăng padding */
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Thêm transform */
         }
 
         nav ul li a:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.3); /* Tăng độ trong suốt khi hover */
+            transform: translateY(-3px); /* Hiệu ứng nổi nhẹ */
         }
+
+        /* Hamburger menu for mobile */
+        .menu-toggle {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 60;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: var(--light-text);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+
+        .nav-menu-mobile {
+            display: none; /* Hidden by default on desktop */
+            flex-direction: column;
+            background-color: var(--primary-color);
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            padding: 1rem 0;
+            z-index: 49;
+        }
+
+        .nav-menu-mobile.active {
+            display: flex;
+        }
+
+        .nav-menu-mobile li {
+            text-align: center;
+            margin: 0.5rem 0;
+        }
+
+        .nav-menu-mobile li a {
+            display: block;
+            padding: 0.8rem 1rem;
+            font-size: 1.1rem;
+        }
+
 
         .container {
             max-width: 1200px;
@@ -88,19 +154,21 @@
 
         .section-title {
             text-align: center;
-            margin: 4rem 0 2rem;
+            margin: 5rem 0 2.5rem; /* Tăng khoảng cách */
             position: relative;
-            font-size: 2rem;
+            font-size: 2.5rem; /* Tăng kích thước chữ */
             color: var(--primary-color);
+            font-weight: 700; /* Làm đậm tiêu đề */
         }
 
         .section-title:after {
             content: "";
             display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent-color);
-            margin: 0.5rem auto;
+            width: 100px; /* Tăng chiều rộng đường kẻ */
+            height: 5px; /* Tăng chiều cao đường kẻ */
+            background-color: var(--accent-color); /* Màu vàng gold */
+            margin: 0.8rem auto; /* Tăng khoảng cách */
+            border-radius: 2px; /* Bo góc nhẹ */
         }
 
         .scroll-container {
@@ -111,7 +179,7 @@
 
         .card-wrapper {
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem; /* Tăng khoảng cách giữa các card */
             padding: 1rem 0;
             overflow-x: auto;
             scroll-snap-type: x mandatory;
@@ -124,22 +192,23 @@
         }
 
         .card {
-            min-width: 280px;
-            max-width: 280px;
+            min-width: 300px; /* Tăng kích thước card */
+            max-width: 300px;
             background: white;
-            border-radius: 10px;
+            border-radius: 12px; /* Tăng bo góc */
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tăng shadow */
             scroll-snap-align: start;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm transition cho shadow */
         }
 
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px); /* Tăng hiệu ứng nổi */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); /* Tăng shadow khi hover */
         }
 
         .card-image {
-            height: 180px;
+            height: 200px; /* Tăng chiều cao ảnh */
             overflow: hidden;
         }
 
@@ -151,76 +220,79 @@
         }
 
         .card:hover .card-image img {
-            transform: scale(1.05);
+            transform: scale(1.08); /* Tăng hiệu ứng zoom ảnh */
         }
 
         .card-content {
-            padding: 1.5rem;
+            padding: 1.8rem; /* Tăng padding */
         }
 
         .card-content h3 {
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.8rem; /* Tăng khoảng cách */
+            font-size: 1.4rem; /* Tăng kích thước chữ */
         }
 
         .card-content p {
             color: #555;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+            font-size: 1rem; /* Tăng kích thước chữ */
+            margin-bottom: 1.2rem; /* Tăng khoảng cách */
         }
 
         .read-more {
             display: inline-block;
-            color: var(--accent-color);
-            font-weight: 600;
+            color: var(--primary-color); /* Đổi màu thành màu chính */
+            font-weight: 700; /* Làm đậm hơn */
             text-decoration: none;
-            font-size: 0.9rem;
-            cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+            font-size: 1rem; /* Tăng kích thước chữ */
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
 
         .read-more:hover {
             text-decoration: underline;
+            color: var(--accent-color); /* Đổi màu khi hover */
         }
 
         footer {
             background-color: var(--primary-color);
             color: var(--light-text);
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 2.5rem; /* Tăng padding */
+            margin-top: 4rem; /* Tăng khoảng cách trên */
         }
 
         .scroll-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.8);
+            width: 45px; /* Tăng kích thước nút */
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.9); /* Tăng độ trong suốt */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* Tăng shadow */
             z-index: 10;
             opacity: 0;
-            transition: opacity 0.3s;
-            font-size: 1.5rem;
+            transition: opacity 0.3s, transform 0.2s ease; /* Thêm transform */
+            font-size: 1.8rem; /* Tăng kích thước mũi tên */
             color: var(--primary-color);
         }
 
         .scroll-container:hover .scroll-btn {
             opacity: 1;
+            transform: translateY(-50%) scale(1.05); /* Hiệu ứng phóng to nhẹ */
         }
 
         .scroll-btn.prev {
-            left: 10px;
+            left: 15px; /* Tăng khoảng cách */
         }
 
         .scroll-btn.next {
-            right: 10px;
+            right: 15px; /* Tăng khoảng cách */
         }
 
         /* Modal Styles */
@@ -241,11 +313,11 @@
         .modal-content {
             background-color: #fefefe;
             margin: auto;
-            padding: 30px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 700px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            padding: 35px; /* Tăng padding */
+            border-radius: 15px; /* Tăng bo góc */
+            width: 85%; /* Tăng chiều rộng */
+            max-width: 800px; /* Tăng chiều rộng tối đa */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4); /* Tăng shadow */
             position: relative;
             animation-name: animatetop;
             animation-duration: 0.4s
@@ -276,45 +348,66 @@
         }
 
         .close-button {
-            color: #aaa;
+            color: #888; /* Màu xám đậm hơn */
             float: right;
-            font-size: 28px;
+            font-size: 32px; /* Tăng kích thước */
             font-weight: bold;
             position: absolute;
-            top: 10px;
-            right: 20px;
+            top: 15px; /* Điều chỉnh vị trí */
+            right: 25px; /* Điều chỉnh vị trí */
         }
 
         .close-button:hover,
         .close-button:focus {
-            color: black;
+            color: var(--primary-color); /* Đổi màu khi hover */
             text-decoration: none;
             cursor: pointer;
         }
 
         .modal-title {
             color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2.2rem; /* Tăng kích thước chữ */
+            margin-bottom: 1.5rem; /* Tăng khoảng cách */
             text-align: center;
+            font-weight: 700;
         }
 
         .modal-body {
-            font-size: 1.1rem;
+            font-size: 1.2rem; /* Tăng kích thước chữ */
             line-height: 1.8;
-            color: #333;
+            color: #444; /* Màu chữ đậm hơn */
+        }
+
+        /* New: Styles for image in modal */
+        .modal-image-container {
+            text-align: center;
+            margin-bottom: 2rem; /* Tăng khoảng cách */
+            display: flex; /* Use flexbox for image layout */
+            flex-wrap: wrap; /* Allow images to wrap */
+            justify-content: center; /* Center images */
+            gap: 15px; /* Tăng khoảng cách giữa các ảnh */
+        }
+
+        .modal-image-container img {
+            max-width: 100%;
+            height: auto; /* Đảm bảo tỷ lệ khung hình */
+            max-height: 250px; /* Giữ nguyên max-height cho desktop */
+            object-fit: cover;
+            border-radius: 10px; /* Tăng bo góc */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* Tăng shadow */
+            flex: 1 1 auto; /* Allow images to grow and shrink */
         }
 
         /* Masonry Grid for Attractions */
         .masonry-grid {
-            column-count: 4; /* Number of columns - Changed to 4 */
-            column-gap: 1.5rem; /* Gap between columns */
-            margin: 2rem 0 4rem;
+            column-count: 4; /* Giữ nguyên 4 cột */
+            column-gap: 2rem; /* Tăng khoảng cách giữa các cột */
+            margin: 3rem 0 5rem; /* Tăng khoảng cách */
         }
 
         .masonry-grid .card {
             width: 100%; /* Card takes full width of its column */
-            margin-bottom: 1.5rem; /* Space below each card */
+            margin-bottom: 2rem; /* Tăng khoảng cách dưới mỗi card */
             break-inside: avoid-column; /* Prevent card from breaking across columns */
             min-width: unset; /* Override min-width from card-wrapper */
             max-width: unset; /* Override max-width from card-wrapper */
@@ -323,16 +416,16 @@
 
         /* Define different heights for cards to create varied shapes */
         .masonry-grid .card.card-tall-1 .card-image {
-            height: 220px; /* Taller image */
+            height: 240px; /* Tăng chiều cao */
         }
         .masonry-grid .card.card-tall-2 .card-image {
-            height: 250px; /* Even taller image */
+            height: 280px; /* Tăng chiều cao */
         }
         .masonry-grid .card.card-tall-3 .card-image {
-            height: 150px; /* Shorter image */
+            height: 180px; /* Tăng chiều cao */
         }
         .masonry-grid .card.card-tall-4 .card-image {
-            height: 200px; /* Medium image */
+            height: 220px; /* Tăng chiều cao */
         }
         /* Add more as needed */
 
@@ -345,116 +438,6 @@
         /* Circular Gallery specific styles (mostly handled by JS, but good to have a class) */
         .circular-gallery-wrapper {
             /* No specific CSS changes needed here beyond existing card-wrapper styles */
-        }
-
-        /* New styles for centered card in scroll-container */
-        /* .card-wrapper.village-scroll {
-            scroll-snap-type: x mandatory;
-            justify-content: center;
-            padding: 1rem 50%; 
-        }
-        .card-wrapper.village-scroll .card {
-            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .card-wrapper.village-scroll .card.centered {
-            min-width: 350px; 
-            max-width: 350px;
-            transform: scale(1.15);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-            z-index: 2;
-        }
-
-        .card-wrapper.village-scroll .card.centered .card-image {
-            height: 240px;
-        }
-        
-        .card-wrapper.village-scroll .card:not(.centered) {
-            margin: 0 -40px;
-            transform: scale(0.9);
-            opacity: 0.8;
-            z-index: 1;
-        } */
-
-        @media (max-width: 1200px) { /* Adjust breakpoint for 3 columns */
-            .masonry-grid {
-                column-count: 3;
-            }
-        }
-
-        @media (max-width: 992px) { /* Adjust breakpoint for 2 columns */
-            .masonry-grid {
-                column-count: 2;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-
-            nav ul li a {
-                font-size: 1rem;
-                padding: 0.3rem 0.5rem;
-            }
-
-            .card {
-                min-width: 220px;
-                max-width: 220px;
-            }
-            
-            .scroll-btn {
-                opacity: 1;
-            }
-
-            .modal-content {
-                width: 95%;
-                padding: 20px;
-            }
-
-            .modal-title {
-                font-size: 1.5rem;
-            }
-
-            .modal-body {
-                font-size: 1rem;
-            }
-
-            .masonry-grid {
-                column-count: 1;
-            }
-            .masonry-grid .card {
-                min-width: 280px; /* Re-apply min-width for mobile if desired */
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            /* Reset specific card heights for single column on mobile */
-            .masonry-grid .card.card-tall-1 .card-image,
-            .masonry-grid .card.card-tall-2 .card-image,
-            .masonry-grid .card.card-tall-3 .card-image,
-            .masonry-grid .card.card-tall-4 .card-image {
-                height: 180px; /* Default height */
-            }
-
-            /* Responsive for schedule cards */
-            .schedule-card {
-                min-width: unset;
-                max-width: 100%;
-            }
-
-            /* .card-wrapper.village-scroll .card.centered {
-                min-width: 250px; 
-                max-width: 250px;
-            }
-            .card-wrapper.village-scroll .card.centered .card-image {
-                height: 180px; 
-            } */
         }
 
         /* New styles for the "Giới thiệu" section */
@@ -507,16 +490,34 @@
         .about-image {
             flex: 1;
             min-width: 300px;
-            max-width: 500px;
+            max-width: 600px;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
         }
 
         .about-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 1600px) {
+            .about-image {
+                max-width: 700px;
+            }
         }
 
         .about-text {
@@ -588,35 +589,10 @@
             font-size: 1rem;
         }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero p {
-                font-size: 1rem;
-            }
-            .about-content {
-                flex-direction: column;
-                align-items: center;
-            }
-            .about-image {
-                min-width: unset;
-                width: 100%;
-            }
-            .about-text {
-                min-width: unset;
-                width: 100%;
-            }
-            .card-container .card {
-                min-width: unset;
-                width: 100%;
-            }
-        }
-
         /* New styles for Schedule Section */
         .schedule-card .card-image {
             position: relative; /* Để overlay có thể định vị tương đối */
-            height: 200px; /* Chiều cao cố định cho ảnh lịch trình */
+            height: 220px; /* Tăng chiều cao ảnh lịch trình */
         }
 
         .schedule-card .card-image img {
@@ -642,28 +618,29 @@
         }
 
         .card-overlay h3 {
-            border: 3px solid var(--light-text); /* Viền trắng */
-            padding: 0.5rem 1rem; /* Khoảng đệm bên trong viền */
-            background-color: rgba(0, 0, 0, 0.4); /* Nền đen mờ cho chữ */
-            border-radius: 5px; /* Bo góc nhẹ cho ô vuông */
+            border: 4px solid var(--accent-color); /* Viền vàng gold */
+            padding: 0.7rem 1.5rem; /* Tăng padding */
+            background-color: rgba(106, 5, 127, 0.6); /* Nền tím đậm mờ */
+            border-radius: 8px; /* Tăng bo góc nhẹ cho ô vuông */
             transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 2rem; /* Tăng kích thước chữ */
         }
 
         .schedule-card:hover .card-overlay {
-            background-color: rgba(0, 0, 0, 0.2); /* Lớp phủ nhẹ hơn khi hover */
+            background-color: rgba(0, 0, 0, 0.3); /* Lớp phủ nhẹ hơn khi hover */
         }
 
         .schedule-card:hover .card-overlay h3 {
-            background-color: rgba(0, 0, 0, 0.6); /* Nền đen mờ đậm hơn khi hover */
-            transform: scale(1.05); /* Phóng to chữ nhẹ khi hover */
+            background-color: rgba(106, 5, 127, 0.8); /* Nền tím đậm hơn khi hover */
+            transform: scale(1.1); /* Phóng to chữ nhẹ khi hover */
         }
 
         /* Village section layout */
         .village-layout-container {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem; /* Tăng khoảng cách */
             align-items: flex-start;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem; /* Tăng khoảng cách */
             /* Đảm bảo các cột nằm ngang hàng */
             flex-direction: row; 
         }
@@ -679,24 +656,25 @@
         .village-text-column {
             flex: 1; /* Cột chữ chiếm 1 phần */
             min-width: 30%; /* Đảm bảo cột chữ có đủ không gian */
-            padding: 1rem;
+            padding: 1.5rem; /* Tăng padding */
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tăng shadow */
             /* Đặt cột văn bản ở bên trái */
             order: 1; 
         }
 
         .village-text-column .village-text-title {
             color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 2rem; /* Tăng kích thước chữ */
+            margin-bottom: 1.2rem; /* Tăng khoảng cách */
             text-align: center;
         }
 
         .village-text-column p {
             margin-bottom: 1rem;
-            line-height: 1.7;
+            line-height: 1.8; /* Tăng line-height */
+            font-size: 1.05rem; /* Tăng kích thước chữ */
         }
 
         .village-text-column ul {
@@ -728,61 +706,22 @@
         }
 
         .card-wrapper.village-scroll .card.centered {
-            min-width: 320px;
-            max-width: 320px;
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            min-width: 340px; /* Tăng kích thước card trung tâm */
+            max-width: 340px;
+            transform: scale(1.1); /* Tăng hiệu ứng phóng to */
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3); /* Tăng shadow */
             z-index: 2;
         }
 
         .card-wrapper.village-scroll .card.centered .card-image {
-            height: 220px;
+            height: 240px; /* Tăng chiều cao ảnh */
         }
         
         .card-wrapper.village-scroll .card:not(.centered) {
-            min-width: 240px;
-            max-width: 240px;
-            transform: scale(0.9);
-            opacity: 0.85;
-        }
-
-        /* Responsive adjustments for the new layout */
-        @media (max-width: 992px) {
-            .village-layout-container {
-                flex-direction: column; /* Chuyển sang bố cục cột trên màn hình nhỏ hơn */
-                align-items: center;
-            }
-            .village-cards-column,
-            .village-text-column {
-                flex: none; /* Bỏ flex để chúng chiếm toàn bộ chiều rộng */
-                width: 100%;
-                min-width: unset;
-                /* Đặt lại order về mặc định để văn bản ở trên card trên mobile */
-                order: unset; 
-            }
-            .village-cards-column {
-                padding-bottom: 2rem; /* Thêm khoảng cách dưới cột card */
-            }
-            .card-wrapper.village-scroll {
-                padding: 1rem calc(50% - 125px); /* Điều chỉnh padding để căn giữa 3 card trên mobile */
-            }
-            .card-wrapper.village-scroll .card.centered {
-                min-width: 250px;
-                max-width: 250px;
-            }
-            .card-wrapper.village-scroll .card.centered .card-image {
-                height: 180px;
-            }
-            .card-wrapper.village-scroll .card:not(.centered) {
-                min-width: 220px;
-                max-width: 220px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .card-wrapper.village-scroll {
-                padding: 1rem calc(50% - 125px); /* Giữ nguyên padding cho mobile */
-            }
+            min-width: 260px; /* Tăng kích thước card không trung tâm */
+            max-width: 260px;
+            transform: scale(0.95); /* Giảm nhẹ hiệu ứng thu nhỏ */
+            opacity: 0.9; /* Tăng độ trong suốt */
         }
 
         /* Thêm scroll-margin-top cho tất cả các section có ID tương ứng với nav */
@@ -794,17 +733,403 @@
         #schedule-section {
             scroll-margin-top: 80px; /* Điều chỉnh giá trị này tùy thuộc vào chiều cao của navbar */
         }
+
+        /* Responsive Adjustments */
+
+        /* Small devices (phones, 768px and down) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem; /* Giảm kích thước chữ hơn nữa */
+            }
+            header p {
+                font-size: 1rem; /* Giảm kích thước chữ hơn nữa */
+            }
+            
+            /* Navbar mobile */
+            nav ul {
+                display: none; /* Hide desktop nav items */
+            }
+            .menu-toggle {
+                display: flex; /* Show hamburger menu */
+            }
+            nav {
+                display: flex;
+                justify-content: center; /* Center the title/logo if any */
+                align-items: center;
+                position: relative; /* For absolute positioning of menu-toggle */
+            }
+            .nav-menu-mobile {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+                padding: 1rem 0;
+                z-index: 49;
+                display: none; /* Hidden by default */
+            }
+            .nav-menu-mobile.active {
+                display: flex;
+                flex-direction: column;
+            }
+            .nav-menu-mobile li {
+                text-align: center;
+                margin: 0.5rem 0;
+            }
+            .nav-menu-mobile li a {
+                display: block;
+                padding: 0.8rem 1rem;
+                font-size: 1.1rem;
+            }
+
+            .container {
+                padding: 0 1rem; /* Adjust padding for phones */
+            }
+            .section-title {
+                font-size: 1.8rem;
+                margin: 3rem 0 1.5rem; /* Giảm khoảng cách */
+            }
+            .section-title:after {
+                width: 80px; /* Giảm chiều rộng đường kẻ */
+                height: 4px; /* Giảm chiều cao đường kẻ */
+                margin: 0.6rem auto; /* Giảm khoảng cách */
+            }
+            .scroll-btn {
+                opacity: 1; /* Always show scroll buttons on mobile */
+                width: 35px; /* Giảm kích thước nút */
+                height: 35px;
+                font-size: 1.4rem; /* Giảm kích thước mũi tên */
+            }
+            .scroll-btn.prev {
+                left: 5px; /* Giảm khoảng cách */
+            }
+            .scroll-btn.next {
+                right: 5px; /* Giảm khoảng cách */
+            }
+            .modal-content {
+                width: 95%; /* Tăng chiều rộng */
+                padding: 20px; /* Điều chỉnh padding */
+            }
+            .modal-title {
+                font-size: 1.6rem; /* Giảm kích thước chữ */
+                margin-bottom: 1rem;
+            }
+            .modal-body {
+                font-size: 1rem; /* Giảm kích thước chữ */
+            }
+            .modal-image-container img {
+                max-height: 150px; /* Điều chỉnh chiều cao tối đa cho ảnh modal */
+                object-fit: contain; /* Đảm bảo ảnh không bị cắt */
+            }
+            .masonry-grid {
+                column-count: 1; /* Single column for phones */
+                column-gap: 1rem; /* Giảm khoảng cách */
+                margin: 2rem 0 3rem; /* Giảm khoảng cách */
+            }
+            .masonry-grid .card {
+                margin-bottom: 1.5rem; /* Giảm khoảng cách dưới mỗi card */
+            }
+            /* Reset specific card heights for single column on mobile */
+            .masonry-grid .card.card-tall-1 .card-image,
+            .masonry-grid .card.card-tall-2 .card-image,
+            .masonry-grid .card.card-tall-3 .card-image,
+            .masonry-grid .card.card-tall-4 .card-image {
+                height: 180px; /* Default height for all attraction cards on mobile */
+            }
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem; /* Giảm khoảng cách */
+            }
+            .about-image {
+                min-width: unset;
+                width: 100%;
+            }
+            .about-text {
+                min-width: unset;
+                width: 100%;
+            }
+            .about-text h3 {
+                font-size: 1.3rem; /* Giảm kích thước chữ */
+                margin-top: 1rem;
+                margin-bottom: 0.6rem;
+            }
+            .about-text p, .about-text ul li {
+                font-size: 0.95rem; /* Giảm kích thước chữ */
+            }
+            .card-container {
+                gap: 1rem; /* Giảm khoảng cách */
+                margin-bottom: 3rem;
+            }
+            .card-container .card {
+                min-width: unset;
+                width: 100%;
+            }
+            .card-container .card-image {
+                height: 160px; /* Điều chỉnh chiều cao ảnh cho các card này */
+            }
+            .card-container .card-content {
+                padding: 1.2rem; /* Giảm padding */
+            }
+            .card-container .card-content h3 {
+                font-size: 1.2rem; /* Giảm kích thước chữ */
+            }
+            .card-container .card-content p {
+                font-size: 0.9rem; /* Giảm kích thước chữ */
+            }
+
+            .card-wrapper.village-scroll {
+                /* Điều chỉnh padding để card trung tâm hiển thị tốt hơn trên mobile */
+                padding: 1rem calc(50% - 120px); /* (240px / 2) - Adjust for centered card width */
+                gap: 0.8rem; /* Giảm khoảng cách giữa các card */
+            }
+            .card-wrapper.village-scroll .card.centered {
+                min-width: 240px; /* Giảm kích thước card trung tâm */
+                max-width: 240px;
+                transform: scale(1.05); /* Giảm hiệu ứng phóng to */
+            }
+            .card-wrapper.village-scroll .card.centered .card-image {
+                height: 180px; /* Giảm chiều cao ảnh */
+            }
+            .card-wrapper.village-scroll .card:not(.centered) {
+                min-width: 200px; /* Giảm kích thước card không trung tâm */
+                max-width: 200px;
+                transform: scale(0.9); /* Giảm hiệu ứng thu nhỏ */
+                opacity: 0.8; /* Giảm độ trong suốt */
+            }
+            /* Responsive for schedule cards */
+            .schedule-card {
+                min-width: unset;
+                max-width: 100%;
+            }
+            .schedule-card .card-image {
+                height: 160px; /* Điều chỉnh chiều cao ảnh lịch trình */
+            }
+            .card-overlay h3 {
+                font-size: 1.4rem; /* Điều chỉnh kích thước chữ overlay */
+                padding: 0.5rem 1rem; /* Giảm padding */
+                border-width: 3px; /* Giảm độ dày viền */
+            }
+            .village-layout-container {
+                gap: 1.5rem; /* Giảm khoảng cách */
+                margin-bottom: 3rem; /* Giảm khoảng cách */
+            }
+            .village-text-column {
+                padding: 1rem; /* Giảm padding */
+            }
+            .village-text-column .village-text-title {
+                font-size: 1.6rem; /* Giảm kích thước chữ */
+                margin-bottom: 0.8rem; /* Giảm khoảng cách */
+            }
+            .village-text-column p, .village-text-column ul li {
+                font-size: 0.95rem; /* Giảm kích thước chữ */
+                line-height: 1.6;
+            }
+        }
+
+        /* Medium devices (tablets, 992px and down) */
+        @media (max-width: 992px) {
+            header h1 {
+                font-size: 3.5rem; /* Điều chỉnh kích thước chữ */
+            }
+            header p {
+                font-size: 1.1rem; /* Điều chỉnh kích thước chữ */
+            }
+            nav ul {
+                gap: 1.5rem; /* Điều chỉnh khoảng cách */
+            }
+            .container {
+                padding: 0 1.5rem; /* Adjust padding for tablets */
+            }
+            .section-title {
+                font-size: 2.2rem;
+                margin: 4rem 0 2rem; /* Điều chỉnh khoảng cách */
+            }
+            .section-title:after {
+                width: 90px; /* Điều chỉnh chiều rộng đường kẻ */
+                height: 4px; /* Điều chỉnh chiều cao đường kẻ */
+                margin: 0.7rem auto; /* Điều chỉnh khoảng cách */
+            }
+            .masonry-grid {
+                column-count: 2; /* 2 columns for tablets */
+                column-gap: 1.5rem; /* Điều chỉnh khoảng cách */
+                margin: 2.5rem 0 4rem; /* Điều chỉnh khoảng cách */
+            }
+            .masonry-grid .card {
+                margin-bottom: 1.8rem; /* Điều chỉnh khoảng cách */
+            }
+            /* Reset specific card heights for 2 columns on tablet */
+            .masonry-grid .card.card-tall-1 .card-image,
+            .masonry-grid .card.card-tall-2 .card-image,
+            .masonry-grid .card.card-tall-3 .card-image,
+            .masonry-grid .card.card-tall-4 .card-image {
+                height: 200px; /* Default height for all attraction cards on tablet */
+            }
+            .village-layout-container {
+                flex-direction: column; /* Stack columns vertically */
+                align-items: center;
+                gap: 2rem; /* Điều chỉnh khoảng cách */
+                margin-bottom: 4rem; /* Điều chỉnh khoảng cách */
+            }
+            .village-cards-column,
+            .village-text-column {
+                flex: none;
+                width: 90%; /* Adjust width for better spacing */
+                min-width: unset;
+                order: unset; /* Reset order for mobile/tablet */
+            }
+            .village-cards-column {
+                padding-bottom: 1.5rem; /* Add space below card column */
+            }
+            .card-wrapper.village-scroll {
+                padding: 1rem calc(50% - 150px); /* (300px / 2) - Adjust for centered card width */
+                gap: 1rem;
+            }
+            .card-wrapper.village-scroll .card.centered {
+                min-width: 300px;
+                max-width: 300px;
+                transform: scale(1.08); /* Điều chỉnh hiệu ứng phóng to */
+            }
+            .card-wrapper.village-scroll .card.centered .card-image {
+                height: 200px; /* Điều chỉnh chiều cao ảnh */
+            }
+            .card-wrapper.village-scroll .card:not(.centered) {
+                min-width: 250px; /* Điều chỉnh kích thước card không trung tâm */
+                max-width: 250px;
+                transform: scale(0.92); /* Điều chỉnh hiệu ứng thu nhỏ */
+                opacity: 0.85; /* Điều chỉnh độ trong suốt */
+            }
+            .about-image {
+                min-width: unset;
+                width: 90%; /* Adjust width for tablet */
+            }
+            .about-text {
+                min-width: unset;
+                width: 100%;
+            }
+            .card-container .card {
+                min-width: 220px; /* Adjust min-width for cards in about section */
+                max-width: 320px;
+            }
+            .schedule-card .card-image {
+                height: 180px; /* Điều chỉnh chiều cao ảnh lịch trình */
+            }
+            .card-overlay h3 {
+                font-size: 1.6rem; /* Điều chỉnh kích thước chữ overlay */
+            }
+        }
+
+        /* Large devices (desktops, 1200px and up) */
+        @media (min-width: 993px) {
+            nav ul {
+                display: flex; /* Show desktop nav items */
+            }
+            .menu-toggle, .nav-menu-mobile {
+                display: none; /* Hide hamburger menu and mobile menu */
+            }
+            .container {
+                max-width: 1200px; /* Keep max-width for content */
+            }
+            .masonry-grid {
+                column-count: 3; /* 3 columns for larger desktops */
+            }
+            .village-layout-container {
+                flex-direction: row; /* Keep side-by-side for larger screens */
+            }
+            .village-cards-column {
+                flex: 2;
+                min-width: 60%;
+            }
+            .village-text-column {
+                flex: 1;
+                min-width: 30%;
+            }
+            .card-wrapper.village-scroll .card.centered {
+                min-width: 340px;
+                max-width: 340px;
+            }
+            .card-wrapper.village-scroll .card.centered .card-image {
+                height: 240px;
+            }
+            .card-wrapper.village-scroll .card:not(.centered) {
+                min-width: 260px;
+                max-width: 260px;
+            }
+        }
+
+        /* Extra large devices (2K, 4K monitors, 1600px and up) */
+        @media (min-width: 1600px) {
+            .container {
+                max-width: 1500px; /* Allow content to be wider on very large screens */
+            }
+            header h1 {
+                font-size: 5.5rem; /* Larger font for main title */
+            }
+            header p {
+                font-size: 1.6rem; /* Larger font for header paragraph */
+            }
+            .section-title {
+                font-size: 3rem; /* Larger section titles */
+            }
+            nav ul li a {
+                font-size: 1.3rem; /* Slightly larger nav links */
+            }
+            .masonry-grid {
+                column-count: 4; /* 4 columns for 2K/4K */
+            }
+            /* Adjust card sizes or image heights if needed for very high resolutions */
+            .card-wrapper.village-scroll .card.centered {
+                min-width: 380px;
+                max-width: 380px;
+            }
+            .card-wrapper.village-scroll .card.centered .card-image {
+                height: 260px;
+            }
+            .card-wrapper.village-scroll .card:not(.centered) {
+                min-width: 300px;
+                max-width: 300px;
+            }
+        }
+
+        /* Optional: Media query for specific aspect ratios (e.g., 16:9 TVs) */
+        /* This is more complex and usually not necessary unless content needs specific layout for TVs */
+        @media (min-aspect-ratio: 16/10) and (min-width: 1200px) {
+            .masonry-grid {
+                column-count: 4; /* 4 columns for wider screens (e.g., 16:10 or wider) */
+            }
+        }
+
+        /* Default for 16:10 or narrower, or smaller screens */
+        @media (max-aspect-ratio: 16/9) and (min-width: 993px) {
+            .masonry-grid {
+                column-count: 3; /* 3 columns for 16:9 or narrower, on larger desktops */
+            }
+        }
     </style>
 </head>
 <body>
     <nav>
-        <ul>
+        <div class="menu-toggle" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-menu-desktop">
             <li><a href="#about">Giới thiệu</a></li>
             <li><a href="#attraction-section">Điểm tham quan</a></li>
             <li><a href="#village-section">Làng nghề</a></li>
             <li><a href="#food-section">Ẩm thực</a></li>
             <li><a href="#art-section">Nghệ thuật</a></li>
-            <li><a href="#schedule-section">Lịch trình</a></li> <!-- THÊM DÒNG NÀY -->
+            <li><a href="#schedule-section">Lịch trình</a></li>
+        </ul>
+        <ul class="nav-menu-mobile" id="mobile-nav-menu">
+            <li><a href="#about">Giới thiệu</a></li>
+            <li><a href="#attraction-section">Điểm tham quan</a></li>
+            <li><a href="#village-section">Làng nghề</a></li>
+            <li><a href="#food-section">Ẩm thực</a></li>
+            <li><a href="#art-section">Nghệ thuật</a></li>
+            <li><a href="#schedule-section">Lịch trình</a></li>
         </ul>
     </nav>
     
@@ -830,10 +1155,10 @@
                             <p>Năm 2025, Festival Huế sẽ diễn ra từ ngày 01/01/2025 đến ngày 31/12/2025 với chủ đề <b style="color:blueviolet">"Di sản văn hóa với hội nhập và phát triển"</b>. Sự kiện lần này sẽ kết hợp hài hòa giữa bảo tồn di sản và sáng tạo nghệ thuật đương đại, mang đến những trải nghiệm độc đáo và đa dạng cho du khách trong suốt cả năm.</p>
                             <h3>Mục đích của Festival Huế 2025:</h3>
                             <ul>
-                                <li style="list-style-type: none"><b style="color: blueviolet">Tôn vinh và quảng bá:</b> Giới thiệu những giá trị văn hóa, lịch sử, kiến trúc, nghệ thuật và ẩm thực đặc sắc của Huế đến với bạn bè trong nước và quốc tế.</li>
-                                <li style="list-style-type: none"><b style="color: blueviolet">Hội nhập và phát triển:</b> Thúc đẩy giao lưu văn hóa quốc tế, tạo cơ hội hợp tác và phát triển du lịch bền vững cho Thừa Thiên Huế.</li>
-                                <li style="list-style-type: none"><b style="color: blueviolet">Nâng tầm thương hiệu:</b> Khẳng định vị thế của Huế là thành phố Festival đặc trưng của Việt Nam, góp phần vào sự phát triển kinh tế - xã hội của địa phương.</li>
-                                <li style="list-style-type: none"><b style="color: blueviolet">Trải nghiệm đa dạng:</b> Mang đến cho du khách những trải nghiệm văn hóa phong phú, từ các lễ hội truyền thống, biểu diễn nghệ thuật đến khám phá ẩm thực và làng nghề.</li>
+                                <li style="list-style-type: none"><b style="color: var(--primary-color)">Tôn vinh và quảng bá:</b> Giới thiệu những giá trị văn hóa, lịch sử, kiến trúc, nghệ thuật và ẩm thực đặc sắc của Huế đến với bạn bè trong nước và quốc tế.</li>
+                                <li style="list-style-type: none"><b style="color: var(--primary-color)">Hội nhập và phát triển:</b> Thúc đẩy giao lưu văn hóa quốc tế, tạo cơ hội hợp tác và phát triển du lịch bền vững cho Thừa Thiên Huế.</li>
+                                <li style="list-style-type: none"><b style="color: var(--primary-color)">Nâng tầm thương hiệu:</b> Khẳng định vị thế của Huế là thành phố Festival đặc trưng của Việt Nam, góp phần vào sự phát triển kinh tế - xã hội của địa phương.</li>
+                                <li style="list-style-type: none"><b style="color: var(--primary-color)">Trải nghiệm đa dạng:</b> Mang đến cho du khách những trải nghiệm văn hóa phong phú, từ các lễ hội truyền thống, biểu diễn nghệ thuật đến khám phá ẩm thực và làng nghề.</li>
                             </ul>
                         </div>  
                     </div>
@@ -877,27 +1202,27 @@
         <section id="attraction-section">
             <h2 class="section-title">Điểm tham quan nổi bật</h2>
             <div class="masonry-grid" id="attraction-cards">
-                <div class="card attraction-card card-tall-1" data-title="Đại Nội Huế" data-content="Đại Nội Huế là quần thể di tích lịch sử văn hóa được UNESCO công nhận là Di sản Thế giới. Đây là nơi ở và làm việc của 13 đời vua triều Nguyễn, với các công trình kiến trúc độc đáo như Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành. Du khách có thể khám phá lịch sử, kiến trúc và văn hóa cung đình qua các tour tham quan và các buổi biểu diễn nghệ thuật truyền thống.">
+                <div class="card attraction-card card-tall-1" data-title="Đại Nội Huế" data-content="Đại Nội Huế là quần thể di tích lịch sử văn hóa được UNESCO công nhận là Di sản Thế giới. Đây là nơi ở và làm việc của 13 đời vua triều Nguyễn, với các công trình kiến trúc độc đáo như Ngọ Môn, Điện Thái Hòa, Tử Cấm Thành. Du khách có thể khám phá lịch sử, kiến trúc và văn hóa cung đình qua các tour tham quan và các buổi biểu diễn nghệ thuật truyền thống." data-images="img/ngo-mon-hue-1.jpg, img/ngo-mon-hue-3-0343.jpg, img/NgoMon.jpg">
                     <div class="card-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dai-noi-hue-1.png" alt="Cổng Ngọ Môn Đại Nội Huế" />
+                        <img src="img/ngo-mon-hue-1.jpg" alt="Cổng Ngọ Môn Đại Nội Huế" />
                     </div>
                     <div class="card-content">
                         <!-- Nội dung chữ đã được loại bỏ -->
                     </div>
                 </div>
                 
-                <div class="card attraction-card card-tall-2" data-title="Lăng Tự Đức" data-content="Lăng Tự Đức là một trong những lăng tẩm đẹp và thơ mộng nhất của các vị vua Nguyễn. Được xây dựng theo phong cách kiến trúc hài hòa với thiên nhiên, lăng là một tổng thể kiến trúc độc đáo với hồ nước, cây xanh và các công trình như Khiêm Cung, Hòa Khiêm Điện. Đây là nơi vua Tự Đức thường lui tới để ngâm thơ, thưởng ngoạn cảnh đẹp.">
+                <div class="card attraction-card card-tall-2" data-title="Lăng Tự Đức" data-content="Lăng Tự Đức là một trong những lăng tẩm đẹp và thơ mộng nhất của các vị vua Nguyễn. Được xây dựng theo phong cách kiến trúc hài hòa với thiên nhiên, lăng là một tổng thể kiến trúc độc đáo với hồ nước, cây xanh và các công trình như Khiêm Cung, Hòa Khiêm Điện. Đây là nơi vua Tự Đức thường lui tới để ngâm thơ, thưởng ngoạn cảnh đẹp." data-images="img/Lang_Tu_Duc.jpg, img/Lang_Tu_Duc_2.jpg">
                     <div class="card-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/lang-tu-duc-1.png" alt="Toàn cảnh Lăng Tự Đức" />
+                        <img src="img/Lang_Tu_Duc.jpg" alt="Toàn cảnh Lăng Tự Đức" />
                     </div>
                     <div class="card-content">
                         <!-- Nội dung chữ đã được loại bỏ -->
                     </div>
                 </div>
                 
-                <div class="card attraction-card card-tall-3" data-title="Chùa Thiên Mụ" data-content="Chùa Thiên Mụ, hay còn gọi là Linh Mụ Tự, là một trong những ngôi chùa cổ nhất và linh thiêng nhất ở Huế. Nằm trên đồi Hà Khê, bên bờ sông Hương, chùa nổi bật với tháp Phước Duyên 7 tầng cao vút. Đây không chỉ là một địa điểm tâm linh mà còn là một biểu tượng văn hóa và kiến trúc của Cố đô Huế.">
+                <div class="card attraction-card card-tall-3" data-title="Chùa Thiên Mụ" data-content="Chùa Thiên Mụ, hay còn gọi là Linh Mụ Tự, là một trong những ngôi chùa cổ nhất và linh thiêng nhất ở Huế. Nằm trên đồi Hà Khê, bên bờ sông Hương, chùa nổi bật với tháp Phước Duyên 7 tầng cao vút. Đây không chỉ là một địa điểm tâm linh mà còn là một biểu tượng văn hóa và kiến trúc của Cố đô Huế." data-images="img/Chua_Thien_Mu.jpg, img/Chua_Thien_Mu_2.jpg">
                     <div class="card-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/chua-thien-mu-1.png" alt="Tháp Phước Duyên Chùa Thiên Mụ" />
+                        <img src="img/Chua_Thien_Mu.jpg" alt="Tháp Phước Duyên Chùa Thiên Mụ" />
                     </div>
                     <div class="card-content">
                         <!-- Nội dung chữ đã được loại bỏ -->
@@ -906,7 +1231,7 @@
                 
                 <div class="card attraction-card card-tall-4" data-title="Sông Hương" data-content="Sông Hương là biểu tượng của sự thơ mộng và lãng mạn của Huế. Dòng sông êm đềm chảy qua thành phố, ôm trọn những di tích lịch sử và danh lam thắng cảnh. Trong Festival Huế, du khách có thể trải nghiệm nghe ca Huế trên thuyền rồng, ngắm cảnh hoàng hôn trên sông, hoặc tham gia các hoạt động văn hóa nghệ thuật diễn ra dọc hai bờ sông.">
                     <div class="card-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/song-huong-1.png" alt="Sông Hương và cầu Tràng Tiền về đêm" />
+                        <img src="img/Song_Huong01.jpg" alt="Sông Hương và cầu Tràng Tiền về đêm" />
                     </div>
                     <div class="card-content">
                         <!-- Nội dung chữ đã được loại bỏ -->
@@ -915,7 +1240,7 @@
                 
                 <div class="card attraction-card card-tall-1" data-title="Cầu Trường Tiền" data-content="Cầu Trường Tiền, hay còn gọi là cầu Tràng Tiền, là một trong những cây cầu nổi tiếng nhất Việt Nam và là biểu tượng của Huế. Với kiến trúc thép uốn lượn độc đáo do người Pháp xây dựng, cầu trở nên lung linh và huyền ảo hơn vào ban đêm nhờ hệ thống chiếu sáng nghệ thuật đổi màu. Đây là điểm đến không thể bỏ qua khi khám phá Huế.">
                     <div class="card-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cau-truong-tien-1.png" alt="Cầu Trường Tiền với ánh đèn rực rỡ" />
+                        <img src="img/Song_huong.jpg" alt="Cầu Trường Tiền với ánh đèn rực rỡ" />
                     </div>
                     <div class="card-content">
                         <!-- Nội dung chữ đã được loại bỏ -->
@@ -924,7 +1249,7 @@
                 
                 <div class="card attraction-card card-tall-2" data-title="Chợ Đông Ba" data-content="Chợ Đông Ba là khu chợ lớn nhất và sầm uất nhất ở Huế, nơi du khách có thể tìm thấy mọi thứ từ đặc sản ẩm thực, đồ thủ công mỹ nghệ, đến các loại vải vóc truyền thống. Đây là một điểm đến lý tưởng để khám phá văn hóa địa phương, thưởng thức các món ăn đường phố và mua sắm quà lưu niệm.">
                     <div class="card-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cho-dong-ba-1.png" alt="Cổng Chợ Đông Ba" />
+                        <img src="img/Cho_DB.jpg" alt="Cổng Chợ Đông Ba" />
                     </div>
                     <div class="card-content">
                         <!-- Nội dung chữ đã được loại bỏ -->
@@ -933,7 +1258,7 @@
                 
                 <div class="card attraction-card card-tall-3" data-title="Đồi Vọng Cảnh" data-content="Đồi Vọng Cảnh là một trong những địa điểm lý tưởng nhất để ngắm toàn cảnh thành phố Huế, đặc biệt là vào lúc bình minh hoặc hoàng hôn. Từ đây, du khách có thể chiêm ngưỡng vẻ đẹp thơ mộng của sông Hương uốn lượn, những ngọn núi trùng điệp và các công trình kiến trúc cổ kính của Huế.">
                     <div class="card-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/doi-vong-canh-1.png" alt="Khung cảnh từ Đồi Vọng Cảnh" />
+                        <img src="img/doi-vong-canh-hue.jpg" alt="Khung cảnh từ Đồi Vọng Cảnh" />
                     </div>
                     <div class="card-content">
                         <!-- Nội dung chữ đã được loại bỏ -->
@@ -943,7 +1268,7 @@
                 <!-- Thêm 2 card mới tại đây -->
                 <div class="card attraction-card card-tall-4" data-title="Hồ Tịnh Tâm" data-content="Hồ Tịnh Tâm là một thắng cảnh nổi tiếng trong quần thể di tích cố đô Huế, được mệnh danh là 'đệ nhất hồ' dưới triều Nguyễn. Hồ nổi bật với kiến trúc tinh tế của các đình, tạ, cầu bắc qua hồ, cùng với những đóa sen hồng rực rỡ vào mùa hè. Đây là nơi lý tưởng để tản bộ, ngắm cảnh và cảm nhận sự yên bình của Huế.">
                     <div class="card-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ho-tinh-tam.png" alt="Hồ Tịnh Tâm với kiến trúc đình tạ và sen" />
+                        <img src="img/Ho_Tinh_Tam.jpg" alt="Hồ Tịnh Tâm với kiến trúc đình tạ và sen" />
                     </div>
                     <div class="card-content">
                         <!-- Nội dung chữ đã được loại bỏ -->
@@ -952,13 +1277,40 @@
 
                 <div class="card attraction-card card-tall-1" data-title="Cung An Định" data-content="Cung An Định là một công trình kiến trúc độc đáo, mang phong cách châu Âu kết hợp với nét kiến trúc truyền thống Việt Nam, từng là nơi ở của vua Khải Định và sau này là vua Bảo Đại cùng Hoàng hậu Nam Phương. Cung nổi bật với kiến trúc lộng lẫy, các bức bích họa tinh xảo và khu vườn rộng lớn, là một điểm đến thú vị để khám phá lịch sử cận đại của triều Nguyễn.">
                     <div class="card-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cung-an-dinh.png" alt="Cung An Định với kiến trúc Pháp cổ điển" />
+                        <img src="img/Cung_An_Dinh.jpg" alt="Cung An Định với kiến trúc Pháp cổ điển" />
                     </div>
                     <div class="card-content">
                         <!-- Nội dung chữ đã được loại bỏ -->
                     </div>
                 </div>
                 <!-- Kết thúc 2 card mới -->
+
+                <!-- Thêm 3 card mới theo yêu cầu -->
+                <div class="card attraction-card card-tall-2" data-title="Đồi Thiên An" data-content="Đồi Thiên An là một địa điểm yên bình và thơ mộng, nổi tiếng với rừng thông xanh mướt và hồ nước trong xanh. Đây là nơi lý tưởng để cắm trại, dã ngoại, hoặc đơn giản là tìm một không gian tĩnh lặng để thư giãn và hòa mình vào thiên nhiên.">
+                    <div class="card-image">
+                        <img src="img/doi-thien-an-hue-1.jpg" alt="Đồi Thiên An với rừng thông và hồ nước" />
+                    </div>
+                    <div class="card-content">
+                        <!-- Nội dung chữ đã được loại bỏ -->
+                    </div>
+                </div>
+                <div class="card attraction-card card-tall-3" data-title="Phá Tam Giang" data-content="Phá Tam Giang là đầm phá nước lợ lớn nhất Đông Nam Á, nổi tiếng với vẻ đẹp hoang sơ, bình dị và cảnh hoàng hôn tuyệt đẹp. Du khách có thể trải nghiệm đi thuyền trên phá, tham quan các làng chài, thưởng thức hải sản tươi ngon và tìm hiểu về cuộc sống của người dân địa phương.">
+                    <div class="card-image">
+                        <img src="img/Pha_Tam_Giang.jpg" alt="Cảnh hoàng hôn trên Phá Tam Giang" />
+                    </div>
+                    <div class="card-content">
+                        <!-- Nội dung chữ đã được loại bỏ -->
+                    </div>
+                </div>
+                <div class="card attraction-card card-tall-4" data-title="Suối Voi" data-content="Suối Voi là một khu du lịch sinh thái tự nhiên với dòng suối trong mát, những tảng đá lớn hình voi và các hồ tắm tự nhiên. Đây là điểm đến lý tưởng để tránh nóng vào mùa hè, bơi lội, và tận hưởng không khí trong lành của núi rừng.">
+                    <div class="card-image">
+                        <img src="img/SUOIVOI.jpg" alt="Suối Voi với dòng nước trong xanh và tảng đá hình voi" />
+                    </div>
+                    <div class="card-content">
+                        <!-- Nội dung chữ đã được loại bỏ -->
+                    </div>
+                </div>
+                <!-- Kết thúc 3 card mới -->
 
             </div>
         </section>
@@ -969,17 +1321,10 @@
                 <!-- Cột chứa văn bản (sẽ nằm bên trái) -->
                 <div class="village-text-column">
                     <h3 class="village-text-title">Làng nghề truyền thống Huế</h3>
-                    <p>Huế không chỉ nổi tiếng với các di tích lịch sử và ẩm thực cung đình mà còn là cái nôi của nhiều làng nghề truyền thống lâu đời. Những làng nghề này không chỉ tạo ra các sản phẩm thủ công tinh xảo mà còn là nơi lưu giữ và phát huy những giá trị văn hóa, tinh hoa của người dân xứ Huế.</p>
-                    <p>Du khách đến Festival Huế 2025 sẽ có cơ hội khám phá các làng nghề như:</p>
-                    <ul>
-                        <li>**Làng nón lá Tây Hồ:** Nơi ra đời những chiếc nón bài thơ duyên dáng.</li>
-                        <li>**Làng đúc đồng Phường Đúc:** Với các sản phẩm đồng mỹ nghệ tinh xảo.</li>
-                        <li>**Làng nghề thêu Phú Vang:** Nổi tiếng với nghệ thuật thêu cung đình.</li>
-                        <li>**Làng gốm Phước Tích:** Ngôi làng cổ với nghề gốm hơn 500 năm.</li>
-                        <li>**Làng tranh Sình:** Dòng tranh dân gian độc đáo.</li>
-                        <li>**Làng hương Thủy Xuân:** Nơi sản xuất hương trầm truyền thống.</li>
-                    </ul>
-                    <p>Mỗi làng nghề đều mang một câu chuyện riêng, một nét văn hóa đặc trưng, góp phần làm phong phú thêm bức tranh văn hóa của Cố đô Huế.</p>
+                    <p>Huế không chỉ nổi tiếng với các di tích lịch sử và ẩm thực cung đình mà còn là cái nôi của nhiều làng nghề truyền thống lâu đời.</p>
+                    <p>Những làng nghề nơi đây không chỉ tạo ra các sản phẩm thủ công tinh xảo, mà còn phản ánh đời sống, tâm hồn và văn hóa của người dân Cố đô.</p>
+                    <p>Từ nón lá, đúc đồng, thêu, gốm, tranh dân gian đến hoa giấy, hương trầm… mỗi làng nghề là một câu chuyện văn hóa riêng biệt.</p>
+                    <p>Festival Huế 2025 là dịp để du khách khám phá, trải nghiệm và cảm nhận giá trị sống động của các làng nghề qua thời gian.</p>
                 </div>
 
                 <!-- Cột chứa các card (sẽ nằm bên phải) -->
@@ -989,80 +1334,91 @@
                         <div class="card-wrapper village-scroll" id="village-cards">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/non-la-tay-ho.png" alt="Những chiếc nón lá Huế thanh thoát được làm thủ công" />
+                                    <img src="img/Non_La.jpg" alt="Những chiếc nón lá Huế thanh thoát được làm thủ công" />
                                 </div>
                                 <div class="card-content">
                                     <h3>Làng nón lá Tây Hồ</h3>
                                     <p>Trải nghiệm làm nón bài thơ - biểu tượng duyên dáng của người con gái Huế</p>
-                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng nón lá Tây Hồ" data-content="Làng nón lá Tây Hồ là một trong những làng nghề truyền thống nổi tiếng nhất ở Huế, chuyên sản xuất nón lá, đặc biệt là nón bài thơ. Du khách có thể đến đây để tìm hiểu quy trình làm nón thủ công tinh xảo, từ việc chọn lá, phơi lá, đến khâu chằm nón và vẽ tranh, viết thơ ẩn dưới lớp lá.">Xem thêm</a>
+                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng nón lá Tây Hồ" data-content="Làng nón lá Tây Hồ là một trong những làng nghề truyền thống nổi tiếng nhất ở Huế, chuyên sản xuất nón lá, đặc biệt là nón bài thơ. Du khách có thể đến đây để tìm hiểu quy trình làm nón thủ công tinh xảo, từ việc chọn lá, phơi lá, đến khâu chằm nón và vẽ tranh, viết thơ ẩn dưới lớp lá." data-images="img/Non_La.jpg, img/Non_La_2.jpg">Xem thêm</a>
                                 </div>
                             </div>
                             
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/duc-dong-phuong-duc.png" alt="Những sản phẩm đồ đồng mỹ nghệ tinh xảo được chế tác thủ công" />
+                                    <img src="img/lang-duc-dong-phuoc-kieu-4.jpg" alt="Những sản phẩm đồ đồng mỹ nghệ tinh xảo được chế tác thủ công" />
                                 </div>
                                 <div class="card-content">
                                     <h3>Làng đúc đồng Phường Đúc</h3>
                                     <p>Khám phá nghề đúc đồng truyền thống với những sản phẩm tinh xảo</p>
-                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng đúc đồng Phường Đúc" data-content="Làng đúc đồng Phường Đúc là một làng nghề truyền thống lâu đời ở Huế, nổi tiếng với các sản phẩm đúc đồng tinh xảo như tượng Phật, chuông, lư hương, và các vật dụng thờ cúng. Du khách có thể chứng kiến quy trình đúc đồng thủ công, từ khâu tạo khuôn, nấu chảy đồng đến hoàn thiện sản phẩm, và mua sắm các món đồ đồng độc đáo làm quà lưu niệm.">Xem thêm</a>
+                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng đúc đồng Phường Đúc" data-content="Làng đúc đồng Phường Đúc là một làng nghề truyền thống lâu đời ở Huế, nổi tiếng với các sản phẩm đúc đồng tinh xảo như tượng Phật, chuông, lư hương, và các vật dụng thờ cúng. Du khách có thể chứng kiến quy trình đúc đồng thủ công, từ khâu tạo khuôn, nấu chảy đồng đến hoàn thiện sản phẩm, và mua sắm các món đồ đồng độc đáo làm quà lưu niệm." data-images="img/lang-duc-dong-phuoc-kieu-4.jpg, img/lang-duc-dong-phuoc-kieu-5.jpg">Xem thêm</a>
                                 </div>
                             </div>
                             
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/theu-phu-vang.png" alt="Những tấm thêu tay tỉ mỉ với hoa văn cung đình Huế" />
+                                    <img src="img/theu-tranh-MMHA.webp" alt="Những tấm thêu tay tỉ mỉ với hoa văn cung đình Huế" />
                                 </div>
                                 <div class="card-content">
                                     <h3>Làng nghề thêu Phú Vang</h3>
                                     <p>Tái hiện nghệ thuật thêu cung đình Huế với những đường kim mũi chỉ tinh tế</p>
-                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng nghề thêu Phú Vang" data-content="Làng nghề thêu Phú Vang là nơi lưu giữ và phát triển nghệ thuật thêu cung đình Huế. Các sản phẩm thêu ở đây nổi tiếng với sự tỉ mỉ, tinh xảo trong từng đường kim mũi chỉ, tái hiện các hoa văn truyền thống, cảnh vật thiên nhiên và chân dung. Du khách có thể chiêm ngưỡng các tác phẩm thêu nghệ thuật và tìm hiểu về kỹ thuật thêu truyền thống.">Xem thêm</a>
+                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng nghề thêu Phú Vang" data-content="Làng nghề thêu Phú Vang là nơi lưu giữ và phát triển nghệ thuật thêu cung đình Huế. Các sản phẩm thêu ở đây nổi tiếng với sự tỉ mỉ, tinh xảo trong từng đường kim mũi chỉ, tái hiện các hoa văn truyền thống, cảnh vật thiên nhiên và chân dung. Du khách có thể chiêm ngưỡng các tác phẩm thêu nghệ thuật và tìm hiểu về kỹ thuật thêu truyền thống." data-images="img/theu-tranh-MMHA.webp, img/theu-tranh-MMHA_2.jpg">Xem thêm</a>
                                 </div>
                             </div>
                             
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/gom-phuoc-tich.png" alt="Những sản phẩm gốm sứ có men màu đặc trưng của Huế" />
+                                    <img src="img/Khamphahue_Lang-nghe-gom-Phuoc-Tich.jpg" alt="Những sản phẩm gốm sứ có men màu đặc trưng của Huế" />
                                 </div>
                                 <div class="card-content">
                                     <h3>Làng gốm Phước Tích</h3>
                                     <p>Ngôi làng cổ với nghề làm gốm hơn 500 năm lịch sử</p>
-                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng gốm Phước Tích" data-content="Làng gốm Phước Tích là một ngôi làng cổ kính với lịch sử làm gốm hơn 500 năm. Các sản phẩm gốm Phước Tích nổi tiếng với chất liệu đất sét đặc trưng và kỹ thuật nung truyền thống, tạo ra những món đồ gốm mộc mạc, bền đẹp và mang đậm dấu ấn văn hóa Huế. Du khách có thể tham quan các lò gốm cổ và tự tay trải nghiệm làm gốm.">Xem thêm</a>
+                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng gốm Phước Tích" data-content="Làng gốm Phước Tích là một ngôi làng cổ kính với lịch sử làm gốm hơn 500 năm. Các sản phẩm gốm Phước Tích nổi tiếng với chất liệu đất sét đặc trưng và kỹ thuật nung truyền thống, tạo ra những món đồ gốm mộc mạc, bền đẹp và mang đậm dấu ấn văn hóa Huế. Du khách có thể tham quan các lò gốm cổ và tự tay trải nghiệm làm gốm." data-images="img/Khamphahue_Lang-nghe-gom-Phuoc-Tich.jpg, img/Khamphahue_Lang-nghe-gom-Phuoc-Tich_2.jpg">Xem thêm</a>
                                 </div>
                             </div>
                             
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/tranh-lang-sinh.png" alt="Những bức tranh làng Sình với màu sắc rực rỡ và họa tiết dân gian" />
+                                    <img src="img/lang-sinh-hue-6.jpg" alt="Những bức tranh làng Sình với màu sắc rực rỡ và họa tiết dân gian" />
                                 </div>
                                 <div class="card-content">
                                     <h3>Tranh làng Sình</h3>
                                     <p>Dòng tranh dân gian độc đáo gắn liền với tín ngưỡng dân gian xứ Huế</p>
-                                    <a href="#" class="read-more" data-target="modal-village" data-title="Tranh làng Sình" data-content="Tranh làng Sình là một dòng tranh dân gian độc đáo của Huế, gắn liền với tín ngưỡng thờ cúng và các lễ hội truyền thống. Những bức tranh được vẽ trên giấy dó bằng các màu sắc tự nhiên, với các họa tiết dân gian như ông Hổ, bà Chúa, các vị thần linh. Du khách có thể tìm hiểu về ý nghĩa của từng bức tranh và quy trình làm tranh thủ công.">Xem thêm</a>
+                                    <a href="#" class="read-more" data-target="modal-village" data-title="Tranh làng Sình" data-content="Tranh làng Sình là một dòng tranh dân gian độc đáo của Huế, gắn liền với tín ngưỡng thờ cúng và các lễ hội truyền thống. Những bức tranh được vẽ trên giấy dó bằng các màu sắc tự nhiên, với các họa tiết dân gian như ông Hổ, bà Chúa, các vị thần linh. Du khách có thể tìm hiểu về ý nghĩa của từng bức tranh và quy trình làm tranh thủ công." data-images="img/lang-sinh-hue-6.jpg, img/lang-sinh-hue-7.jpg">Xem thêm</a>
                                 </div>
                             </div>
                             
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/quat-giay-hue.png" alt="Những chiếc quạt giấy nhiều màu sắc với họa tiết cung đình" />
+                                    <img src="img/Khamphahue-NgheQuatGiay_LeVanMinh.jpg" alt="Những chiếc quạt giấy nhiều màu sắc với họa tiết cung đình" />
                                 </div>
                                 <div class="card-content">
                                     <h3>Làng nghề làm quạt</h3>
                                     <p>Khám phá nghệ thuật làm quạt truyền thống của xứ Huế mộng mơ</p>
-                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng nghề làm quạt" data-content="Nghề làm quạt truyền thống ở Huế đã tồn tại từ lâu đời, tạo ra những chiếc quạt giấy, quạt lụa tinh xảo với nhiều kiểu dáng và họa tiết khác nhau. Quạt Huế không chỉ là vật dụng hàng ngày mà còn là một tác phẩm nghệ thuật, thể hiện sự khéo léo của người thợ thủ công. Du khách có thể mua những chiếc quạt đẹp làm quà lưu niệm hoặc tìm hiểu về quy trình làm quạt.">Xem thêm</a>
+                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng nghề làm quạt" data-content="Nghề làm quạt truyền thống ở Huế đã tồn tại từ lâu đời, tạo ra những chiếc quạt giấy, quạt lụa tinh xảo với nhiều kiểu dáng và họa tiết khác nhau. Quạt Huế không chỉ là vật dụng hàng ngày mà còn là một tác phẩm nghệ thuật, thể hiện sự khéo léo của người thợ thủ công. Du khách có thể mua những chiếc quạt đẹp làm quà lưu niệm hoặc tìm hiểu về quy trình làm quạt." data-images="img/Khamphahue-NgheQuatGiay_LeVanMinh.jpg, img/Khamphahue-NgheQuatGiay_LeVanMinh_2.jpg">Xem thêm</a>
                                 </div>
                             </div>
                             
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/huong-thuy-xuan.png" alt="Những nguyên liệu tự nhiên để làm hương trầm truyền thống" />
+                                    <img src="img/lang-huong-thuy-xuan-2-1024x683.webp" alt="Những nguyên liệu tự nhiên để làm hương trầm truyền thống" />
                                 </div>
                                 <div class="card-content">
                                     <h3>Làng hương Thủy Xuân</h3>
                                     <p>Tìm hiểu quy trình làm hương trầm truyền thống với mùi thơm đặc trưng</p>
-                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng hương Thủy Xuân" data-content="Làng hương Thủy Xuân là một trong những làng nghề làm hương truyền thống nổi tiếng nhất ở Huế. Đến đây, du khách sẽ được chiêm ngưỡng những bó hương đủ màu sắc rực rỡ, tìm hiểu quy trình làm hương thủ công từ các nguyên liệu tự nhiên như trầm hương, quế, hồi. Hương Thủy Xuân không chỉ là sản phẩm tâm linh mà còn là một nét văn hóa đặc trưng của Huế.">Xem thêm</a>
+                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng hương Thủy Xuân" data-content="Làng hương Thủy Xuân là một trong những làng nghề làm hương truyền thống nổi tiếng nhất ở Huế. Đến đây, du khách sẽ được chiêm ngưỡng những bó hương đủ màu sắc rực rỡ, tìm hiểu quy trình làm hương thủ công từ các nguyên liệu tự nhiên như trầm hương, quế, hồi. Hương Thủy Xuân không chỉ là sản phẩm tâm linh mà còn là một nét văn hóa đặc trưng của Huế." data-images="img/lang-huong-thuy-xuan-2-1024x683.webp, img/lang-huong-thuy-xuan-3.jpg">Xem thêm</a>
                                 </div>
                             </div>
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="img/lang-nghe-hoa-giay-thanh-tien-1-1619.jpg" alt="Những bông hoa giấy đầy màu sắc được làm thủ công tại làng Thanh Tiên" />
+                                </div>
+                                <div class="card-content">
+                                    <h3>Làng hoa giấy Thanh Tiên</h3>
+                                    <p>Khám phá nghề làm hoa giấy truyền thống rực rỡ sắc màu ở vùng quê ven sông</p>
+                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng hoa giấy Thanh Tiên" data-content="Làng hoa giấy Thanh Tiên nằm ở xã Phú Mậu, huyện Phú Vang, cách trung tâm Huế khoảng 10km. Đây là làng nghề truyền thống hơn 300 năm tuổi, nổi tiếng với những bông hoa giấy sặc sỡ dùng trong lễ cúng, trang trí Tết và các nghi lễ truyền thống. Nghệ nhân nơi đây dùng tre, giấy màu và bột hồ để tạo ra các loài hoa như sen, cúc, mai… đầy sống động. Đến đây, du khách có thể tận mắt chứng kiến quy trình làm hoa và tự tay tạo ra một bông hoa riêng của mình." data-images="img/lang-nghe-hoa-giay-thanh-tien-1-1619.jpg, img/lang-nghe-hoa-giay-thanh-tien-2.jpg">Xem thêm</a>
+                                </div>
+                            </div>
+
                             <!-- Add more cards as needed -->
                             <div class="card">
                                 <div class="card-image">
@@ -1071,7 +1427,7 @@
                                 <div class="card-content">
                                     <h3>Làng nghề mới</h3>
                                     <p>Mô tả làng nghề mới</p>
-                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng nghề mới" data-content="Chi tiết về làng nghề mới">Xem thêm</a>
+                                    <a href="#" class="read-more" data-target="modal-village" data-title="Làng nghề mới" data-content="Chi tiết về làng nghề mới" data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/44e6ea05-aa26-4382-b413-92e8a6f4e603.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/44e6ea05-aa26-4382-b413-92e8a6f4e603.png">Xem thêm</a>
                                 </div>
                             </div>
                         </div>
@@ -1093,7 +1449,7 @@
                         <div class="card-content">
                             <h3>Bún bò Huế</h3>
                             <p>Món ăn đặc sản nổi tiếng với hương vị đậm đà và nước dùng thơm ngon</p>
-                            <a href="#" class="read-more" data-target="modal-food" data-title="Bún bò Huế" data-content="Bún bò Huế là món ăn trứ danh của Cố đô, nổi tiếng với nước dùng đậm đà từ xương bò và giò heo, vị cay nồng của ớt, mùi thơm của sả và mắm ruốc. Tô bún thường có thịt bò thái mỏng, chả cua, giò heo, và ăn kèm với rau sống tươi ngon. Đây là món ăn nhất định phải thử khi đến Huế.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-food" data-title="Bún bò Huế" data-content="Bún bò Huế là món ăn trứ danh của Cố đô, nổi tiếng với nước dùng đậm đà từ xương bò và giò heo, vị cay nồng của ớt, mùi thơm của sả và mắm ruốc. Tô bún thường có thịt bò thái mỏng, chả cua, giò heo, và ăn kèm với rau sống tươi ngon. Đây là món ăn nhất định phải thử khi đến Huế." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bun-bo-hue.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bun-bo-hue-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1104,7 +1460,7 @@
                         <div class="card-content">
                             <h3>Bánh bèo</h3>
                             <p>Món ăn nhẹ nhàng, được làm từ bột gạo, ăn kèm với tôm và hành phi</p>
-                            <a href="#" class="read-more" data-target="modal-food" data-title="Bánh bèo" data-content="Bánh bèo là món ăn vặt đặc trưng của Huế, được làm từ bột gạo hấp trong những chén nhỏ. Bánh thường được rắc tôm cháy, tóp mỡ, hành phi và ăn kèm với nước mắm chua ngọt đặc trưng. Vị mềm mại của bánh, giòn tan của tóp mỡ và vị đậm đà của tôm cháy tạo nên một hương vị khó quên.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-food" data-title="Bánh bèo" data-content="Bánh bèo là món ăn vặt đặc trưng của Huế, được làm từ bột gạo hấp trong những chén nhỏ. Bánh thường được rắc tôm cháy, tóp mỡ, hành phi và ăn kèm với nước mắm chua ngọt đặc trưng. Vị mềm mại của bánh, giòn tan của tóp mỡ và vị đậm đà của tôm cháy tạo nên một hương vị khó quên." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/banh-beo.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/banh-beo-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1115,7 +1471,7 @@
                         <div class="card-content">
                             <h3>Bánh lọc</h3>
                             <p>Bánh trong, nhân tôm thịt, thường được ăn kèm với nước mắm chua ngọt</p>
-                            <a href="#" class="read-more" data-target="modal-food" data-title="Bánh lọc" data-content="Bánh lọc Huế có hai loại: bánh lọc trần và bánh lọc gói lá. Cả hai đều có vỏ bánh trong suốt làm từ bột năng, nhân tôm và thịt ba chỉ ướp đậm đà. Bánh lọc thường được hấp chín và ăn kèm với nước mắm ớt tỏi chua ngọt. Đây là món ăn được nhiều du khách yêu thích bởi hương vị độc đáo và sự dai ngon của vỏ bánh.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-food" data-title="Bánh lọc" data-content="Bánh lọc Huế có hai loại: bánh lọc trần và bánh lọc gói lá. Cả hai đều có vỏ bánh trong suốt làm từ bột năng, nhân tôm và thịt ba chỉ ướp đậm đà. Bánh lọc thường được hấp chín và ăn kèm với nước mắm ớt tỏi chua ngọt. Đây là món ăn được nhiều du khách yêu thích bởi hương vị độc đáo và sự dai ngon của vỏ bánh." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/banh-loc.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/banh-loc-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1126,7 +1482,7 @@
                         <div class="card-content">
                             <h3>Cơm hến</h3>
                             <p>Món ăn dân dã, được làm từ cơm và hến, thường ăn kèm với rau sống</p>
-                            <a href="#" class="read-more" data-target="modal-food" data-title="Cơm hến" data-content="Cơm hến là món ăn dân dã nhưng lại rất nổi tiếng của Huế, đặc biệt vào những ngày hè nóng bức. Món ăn này bao gồm cơm nguội, hến xào, tóp mỡ, đậu phộng rang, rau sống thái nhỏ, bắp chuối, khế, và một chút mắm ruốc. Tất cả được trộn đều và chan thêm nước hến nóng hổi, tạo nên hương vị cay, mặn, ngọt, bùi rất đặc trưng.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-food" data-title="Cơm hến" data-content="Cơm hến là món ăn dân dã nhưng lại rất nổi tiếng của Huế, đặc biệt vào những ngày hè nóng bức. Món ăn này bao gồm cơm nguội, hến xào, tóp mỡ, đậu phộng rang, rau sống thái nhỏ, bắp chuối, khế, và một chút mắm ruốc. Tất cả được trộn đều và chan thêm nước hến nóng hổi, tạo nên hương vị cay, mặn, ngọt, bùi rất đặc trưng." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/com-hen.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/com-hen-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1137,7 +1493,7 @@
                         <div class="card-content">
                             <h3>Nem lụi</h3>
                             <p>Món nem nướng thơm lừng, ăn kèm với bánh tráng, rau sống và nước chấm đặc biệt</p>
-                            <a href="#" class="read-more" data-target="modal-food" data-title="Nem lụi" data-content="Nem lụi là món ăn vặt được nhiều người yêu thích ở Huế. Nem được làm từ thịt heo xay nhuyễn, trộn với gia vị và quấn quanh cây sả hoặc tre, sau đó nướng trên bếp than hồng cho đến khi vàng ươm, thơm lừng. Nem lụi thường được ăn kèm với bánh tráng cuốn, rau sống, dưa chuột, và đặc biệt là nước chấm đậu phộng béo ngậy, đậm đà.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-food" data-title="Nem lụi" data-content="Nem lụi là món ăn vặt được nhiều người yêu thích ở Huế. Nem được làm từ thịt heo xay nhuyễn, trộn với gia vị và quấn quanh cây sả hoặc tre, sau đó nướng trên bếp than hồng cho đến khi vàng ươm, thơm lừng. Nem lụi thường được ăn kèm với bánh tráng cuốn, rau sống, dưa chuột, và đặc biệt là nước chấm đậu phộng béo ngậy, đậm đà." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/nem-lui.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/nem-lui-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1148,7 +1504,7 @@
                         <div class="card-content">
                             <h3>Chè Huế</h3>
                             <p>Đa dạng các loại chè từ chè cung đình đến chè dân gian, ngọt ngào và thanh mát</p>
-                            <a href="#" class="read-more" data-target="modal-food" data-title="Chè Huế" data-content="Chè Huế nổi tiếng với sự đa dạng và tinh tế, từ các loại chè cung đình sang trọng đến chè dân gian bình dị. Một số loại chè phổ biến bao gồm chè hạt sen, chè khoai môn, chè đậu xanh, chè bắp, và đặc biệt là chè bột lọc heo quay độc đáo. Mỗi loại chè đều mang một hương vị riêng, ngọt ngào và thanh mát, rất thích hợp để thưởng thức sau bữa ăn.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-food" data-title="Chè Huế" data-content="Chè Huế nổi tiếng với sự đa dạng và tinh tế, từ các loại chè cung đình sang trọng đến chè dân gian bình dị. Một số loại chè phổ biến bao gồm chè hạt sen, chè khoai môn, chè đậu xanh, chè bắp, và đặc biệt là chè bột lọc heo quay độc đáo. Mỗi loại chè đều mang một hương vị riêng, ngọt ngào và thanh mát, rất thích hợp để thưởng thức sau bữa ăn." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/che-hue.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/che-hue-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1159,7 +1515,7 @@
                         <div class="card-content">
                             <h3>Bánh khoái</h3>
                             <p>Bánh xèo phiên bản Huế, giòn rụm, nhân tôm thịt, ăn kèm rau sống và nước lèo</p>
-                            <a href="#" class="read-more" data-target="modal-food" data-title="Bánh khoái" data-content="Bánh khoái là một loại bánh xèo đặc trưng của Huế, được chiên giòn rụm với lớp vỏ vàng ươm. Nhân bánh thường gồm tôm tươi, thịt ba chỉ, giá đỗ, và trứng. Bánh khoái được ăn kèm với nhiều loại rau sống như xà lách, rau thơm, chuối chát, khế chua, và đặc biệt là nước lèo (nước chấm) được chế biến công phu từ gan heo, thịt nạc, đậu phộng.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-food" data-title="Bánh khoái" data-content="Bánh khoái là một loại bánh xèo đặc trưng của Huế, được chiên giòn rụm với lớp vỏ vàng ươm. Nhân bánh thường gồm tôm tươi, thịt ba chỉ, giá đỗ, và trứng. Bánh khoái được ăn kèm với nhiều loại rau sống như xà lách, rau thơm, chuối chát, khế chua, và đặc biệt là nước lèo (nước chấm) được chế biến công phu từ gan heo, thịt nạc, đậu phộng." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/banh-khoai.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/banh-khoai-2.png">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -1179,7 +1535,7 @@
                         <div class="card-content">
                             <h3>Ca Huế trên sông Hương</h3>
                             <p>Nghệ thuật ca nhạc truyền thống, biểu diễn trên sông Hương thơ mộng</p>
-                            <a href="#" class="read-more" data-target="modal-art" data-title="Ca Huế trên sông Hương" data-content="Ca Huế trên sông Hương là một trải nghiệm văn hóa độc đáo, nơi du khách được thưởng thức các làn điệu dân ca và ca nhạc cung đình Huế trên những chiếc thuyền rồng lướt nhẹ trên dòng sông Hương thơ mộng. Các nghệ sĩ trong trang phục truyền thống sẽ trình diễn các bài bản cổ truyền, mang đến không gian âm nhạc lãng mạn và sâu lắng.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-art" data-title="Ca Huế trên sông Hương" data-content="Ca Huế trên sông Hương là một trải nghiệm văn hóa độc đáo, nơi du khách được thưởng thức các làn điệu dân ca và ca nhạc cung đình Huế trên những chiếc thuyền rồng lướt nhẹ trên dòng sông Hương thơ mộng. Các nghệ sĩ trong trang phục truyền thống sẽ trình diễn các bài bản cổ truyền, mang đến không gian âm nhạc lãng mạn và sâu lắng." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ca-hue.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ca-hue-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1190,7 +1546,7 @@
                         <div class="card-content">
                             <h3>Nhã nhạc cung đình</h3>
                             <p>Âm nhạc cung đình Huế, được UNESCO công nhận là di sản văn hóa phi vật thể</p>
-                            <a href="#" class="read-more" data-target="modal-art" data-title="Nhã nhạc cung đình Huế" data-content="Nhã nhạc cung đình Huế là thể loại âm nhạc cung đình truyền thống của Việt Nam, được UNESCO công nhận là Kiệt tác truyền khẩu và Di sản phi vật thể của con người. Đây là loại hình âm nhạc trang trọng, được sử dụng trong các nghi lễ, lễ hội cung đình. Các buổi biểu diễn Nhã nhạc thường diễn ra tại Đại Nội, mang đến cái nhìn sâu sắc về văn hóa và lịch sử triều Nguyễn.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-art" data-title="Nhã nhạc cung đình Huế" data-content="Nhã nhạc cung đình Huế là thể loại âm nhạc cung đình truyền thống của Việt Nam, được UNESCO công nhận là Kiệt tác truyền khẩu và Di sản phi vật thể của con người. Đây là loại hình âm nhạc trang trọng, được sử dụng trong các nghi lễ, lễ hội cung đình. Các buổi biểu diễn Nhã nhạc thường diễn ra tại Đại Nội, mang đến cái nhìn sâu sắc về văn hóa và lịch sử triều Nguyễn." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/nha-nhac.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/nha-nhac-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1201,7 +1557,7 @@
                         <div class="card-content">
                             <h3>Múa cung đình</h3>
                             <p>Các điệu múa truyền thống được biểu diễn trong cung đình xưa</p>
-                            <a href="#" class="read-more" data-target="modal-art" data-title="Múa cung đình Huế" data-content="Múa cung đình Huế là một loại hình nghệ thuật biểu diễn độc đáo, từng được trình diễn trong các nghi lễ và yến tiệc của triều Nguyễn. Các điệu múa thường mang ý nghĩa tượng trưng, thể hiện sự uy nghi, trang trọng của hoàng gia. Trang phục lộng lẫy, động tác uyển chuyển và âm nhạc truyền thống tạo nên một màn trình diễn mãn nhãn, đưa du khách trở về không gian cung đình xưa.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-art" data-title="Múa cung đình Huế" data-content="Múa cung đình Huế là một loại hình nghệ thuật biểu diễn độc đáo, từng được trình diễn trong các nghi lễ và yến tiệc của triều Nguyễn. Các điệu múa thường mang ý nghĩa tượng trưng, thể hiện sự uy nghi, trang trọng của hoàng gia. Trang phục lộng lẫy, động tác uyển chuyển và âm nhạc truyền thống tạo nên một màn trình diễn mãn nhãn, đưa du khách trở về không gian cung đình xưa." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/mua-cung-dinh.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/mua-cung-dinh-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1212,7 +1568,7 @@
                         <div class="card-content">
                             <h3>Áo dài Huế</h3>
                             <p>Biểu tượng của vẻ đẹp thanh lịch, duyên dáng của người phụ nữ Huế</p>
-                            <a href="#" class="read-more" data-target="modal-art" data-title="Áo dài Huế" data-content="Áo dài Huế không chỉ là trang phục truyền thống mà còn là biểu tượng của vẻ đẹp thanh lịch, duyên dáng của người phụ nữ Huế. Với thiết kế tinh tế, màu sắc trang nhã và chất liệu mềm mại, áo dài Huế mang một nét riêng biệt, thể hiện sự kín đáo nhưng vẫn gợi cảm. Trong Festival, du khách có thể chiêm ngưỡng các buổi trình diễn áo dài hoặc tự mình trải nghiệm mặc áo dài dải phố.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-art" data-title="Áo dài Huế" data-content="Áo dài Huế không chỉ là trang phục truyền thống mà còn là biểu tượng của vẻ đẹp thanh lịch, duyên dáng của người phụ nữ Huế. Với thiết kế tinh tế, màu sắc trang nhã và chất liệu mềm mại, áo dài Huế mang một nét riêng biệt, thể hiện sự kín đáo nhưng vẫn gợi cảm. Trong Festival, du khách có thể chiêm ngưỡng các buổi trình diễn áo dài hoặc tự mình trải nghiệm mặc áo dài dải phố." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ao-dai-hue.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ao-dai-hue-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1223,7 +1579,7 @@
                         <div class="card-content">
                             <h3>Hát chầu văn</h3>
                             <p>Nghệ thuật diễn xướng dân gian độc đáo, mang đậm yếu tố tâm linh</p>
-                            <a href="#" class="read-more" data-target="modal-art" data-title="Hát chầu văn" data-content="Hát chầu văn là một loại hình nghệ thuật diễn xướng dân gian độc đáo, gắn liền với tín ngưỡng thờ Mẫu Tam Phủ của người Việt. Với âm nhạc sôi động, lời ca bay bổng và các điệu múa uyển chuyển, hát chầu văn không chỉ là một buổi biểu diễn nghệ thuật mà còn là một nghi lễ tâm linh, mang đến không khí linh thiêng và huyền bí.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-art" data-title="Hát chầu văn" data-content="Hát chầu văn là một loại hình nghệ thuật diễn xướng dân gian độc đáo, gắn liền với tín ngưỡng thờ Mẫu Tam Phủ của người Việt. Với âm nhạc sôi động, lời ca bay bổng và các điệu múa uyển chuyển, hát chầu văn không chỉ là một buổi biểu diễn nghệ thuật mà còn là một nghi lễ tâm linh, mang đến không khí linh thiêng và huyền bí." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/hat-chau-van.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/hat-chau-van-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1234,7 +1590,7 @@
                         <div class="card-content">
                             <h3>Múa rối nước</h3>
                             <p>Nghệ thuật sân khấu truyền thống độc đáo của Việt Nam</p>
-                            <a href="#" class="read-more" data-target="modal-art" data-title="Múa rối nước" data-content="Múa rối nước là một loại hình nghệ thuật sân khấu truyền thống độc đáo của Việt Nam, được biểu diễn trên mặt nước với những con rối được điều khiển bởi các nghệ nhân ẩn mình sau tấm màn. Các vở diễn thường tái hiện cuộc sống sinh hoạt của người dân nông thôn, các câu chuyện cổ tích và truyền thuyết. Đây là một màn trình diễn hấp dẫn, thu hút cả trẻ em và người lớn.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-art" data-title="Múa rối nước" data-content="Múa rối nước là một loại hình nghệ thuật sân khấu truyền thống độc đáo của Việt Nam, được biểu diễn trên mặt nước với những con rối được điều khiển bởi các nghệ nhân ẩn mình sau tấm màn. Các vở diễn thường tái hiện cuộc sống sinh hoạt của người dân nông thôn, các câu chuyện cổ tích và truyền thuyết. Đây là một màn trình diễn hấp dẫn, thu hút cả trẻ em và người lớn." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/roi-nuoc.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/roi-nuoc-2.png">Xem thêm</a>
                         </div>
                     </div>
                     
@@ -1245,7 +1601,7 @@
                         <div class="card-content">
                             <h3>Thư pháp Huế</h3>
                             <p>Nghệ thuật viết chữ đẹp, mang đậm nét văn hóa truyền thống</p>
-                            <a href="#" class="read-more" data-target="modal-art" data-title="Thư pháp Huế" data-content="Thư pháp Huế là một loại hình nghệ thuật truyền thống, nơi các nghệ nhân dùng bút lông và mực tàu để viết những câu đối, bài thơ hoặc chữ Hán trên giấy, lụa. Thư pháp không chỉ là viết chữ đẹp mà còn là sự thể hiện tâm hồn, triết lý sống của người viết. Du khách có thể đến các gian hàng thư pháp để chiêm ngưỡng tài năng của các nghệ nhân và xin chữ về làm kỷ niệm.">Xem thêm</a>
+                            <a href="#" class="read-more" data-target="modal-art" data-title="Thư pháp Huế" data-content="Thư pháp Huế là một loại hình nghệ thuật truyền thống, nơi các nghệ nhân dùng bút lông và mực tàu để viết những câu đối, bài thơ hoặc chữ Hán trên giấy, lụa. Thư pháp không chỉ là viết chữ đẹp mà còn là sự thể hiện tâm hồn, triết lý sống của người viết. Du khách có thể đến các gian hàng thư pháp để chiêm ngưỡng tài năng của các nghệ nhân và xin chữ về làm kỷ niệm." data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/thu-phap.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/thu-phap-2.png">Xem thêm</a>
                         </div>
                     </div>
                 </div>
@@ -1267,7 +1623,7 @@
                             <li><b>15/01 - 25/01:</b> Chuỗi sự kiện chào đón Tết Nguyên Đán: Chợ hoa, biểu diễn nghệ thuật truyền thống.</li>
                             <li><b>26/01:</b> Đêm giao thừa và bắn pháo hoa nghệ thuật tại Kỳ Đài.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-jan.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-jan-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-jan.png" alt="Lịch trình Tháng 1" />
                             <div class="card-overlay">
@@ -1282,7 +1638,7 @@
                             <li><b>14/02:</b> Chương trình nghệ thuật 'Tình khúc sông Hương' mừng Valentine.</li>
                             <li><b>20/02 - 28/02:</b> Triển lãm hoa xuân và cây cảnh nghệ thuật.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-feb.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-feb-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-feb.png" alt="Lịch trình Tháng 2" />
                             <div class="card-overlay">
@@ -1297,7 +1653,7 @@
                             <li><b>15/03 - 22/03:</b> Liên hoan thơ ca Huế và các buổi ngâm thơ trên sông Hương.</li>
                             <li><b>25/03 - 30/03:</b> Giao lưu văn hóa Việt - Hàn tại công viên 3/2.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-mar.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-mar-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-mar.png" alt="Lịch trình Tháng 3" />
                             <div class="card-overlay">
@@ -1312,7 +1668,7 @@
                             <li><b>15/04 - 20/04:</b> Trình diễn và trải nghiệm các trò chơi dân gian Huế.</li>
                             <li><b>25/04 - 30/04:</b> Tuần lễ phim tài liệu và nghệ thuật Huế.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-apr.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-apr-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-apr.png" alt="Lịch trình Tháng 4" />
                             <div class="card-overlay">
@@ -1327,7 +1683,7 @@
                             <li><b>10/05 - 18/05:</b> Hội thảo và trình diễn kỹ thuật thủ công mỹ nghệ.</li>
                             <li><b>20/05 - 25/05:</b> Lễ hội đèn lồng và thả hoa đăng trên sông Hương.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86g1-2a93ccde5887/image/schedule-may.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86g1-2a93ccde5887/image/schedule-may-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86g1-2a93ccde5887/image/schedule-may.png" alt="Lịch trình Tháng 5" />
                             <div class="card-overlay">
@@ -1342,7 +1698,7 @@
                             <li><b>15/06 - 22/06:</b> Triển lãm nghệ thuật sắp đặt và điêu khắc đương đại.</li>
                             <li><b>25/06 - 30/06:</b> Chương trình giao lưu văn hóa Việt - Pháp.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-jun.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-jun-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-jun.png" alt="Lịch trình Tháng 6" />
                             <div class="card-overlay">
@@ -1357,7 +1713,7 @@
                             <li><b>10/07 - 18/07:</b> Các hoạt động thể thao dưới nước và bảo vệ môi trường biển.</li>
                             <li><b>20/07 - 28/07:</b> Khám phá vườn quốc gia Bạch Mã và các tour du lịch sinh thái.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-jul.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-jul-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-jul.png" alt="Lịch trình Tháng 7" />
                             <div class="card-overlay">
@@ -1372,7 +1728,7 @@
                             <li><b>15/08 - 22/08:</b> Các buổi biểu diễn nghệ thuật đường phố tại phố đi bộ Nguyễn Đình Chiểu.</li>
                             <li><b>25/08 - 30/08:</b> Lễ hội bia và ẩm thực đường phố.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-aug.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-aug-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-aug.png" alt="Lịch trình Tháng 8" />
                             <div class="card-overlay">
@@ -1387,7 +1743,7 @@
                             <li><b>10/09 - 17/09:</b> Các hoạt động vui chơi, giải trí và ẩm thực mừng Tết Trung thu.</li>
                             <li><b>20/09 - 28/09:</b> Lễ hội diều Huế.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-sep.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-sep-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-sep.png" alt="Lịch trình Tháng 9" />
                             <div class="card-overlay">
@@ -1402,7 +1758,7 @@
                             <li><b>15/10 - 22/10:</b> Hội thảo quốc tế về bảo tồn và phát huy giá trị di sản.</li>
                             <li><b>25/10 - 30/10:</b> Tuần lễ nghệ thuật sắp đặt và trình diễn ánh sáng tại các di tích.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-oct.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-oct-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-oct.png" alt="Lịch trình Tháng 10" />
                             <div class="card-overlay">
@@ -1417,7 +1773,7 @@
                             <li><b>10/11 - 17/11:</b> Cuộc thi cắm hoa và trang trí tiểu cảnh.</li>
                             <li><b>20/11 - 28/11:</b> Lễ hội ẩm thực chay và các món ăn truyền thống.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-nov.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-nov-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-nov.png" alt="Lịch trình Tháng 11" />
                             <div class="card-overlay">
@@ -1432,7 +1788,7 @@
                             <li><b>10/12 - 18/12:</b> Triển lãm ảnh và tư liệu về Festival Huế 2025.</li>
                             <li><b>25/12 - 31/12:</b> Chuỗi sự kiện chào đón năm mới 2026, đêm nghệ thuật bế mạc Festival.</li>
                         </ul>
-                    ">
+                    " data-images="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-dec.png, https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-dec-2.png">
                         <div class="card-image">
                             <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/schedule-dec.png" alt="Lịch trình Tháng 12" />
                             <div class="card-overlay">
@@ -1460,14 +1816,26 @@
         <div class="modal-content">
             <span class="close-button">&times;</span>
             <h3 class="modal-title" id="modalTitle"></h3>
+            <div class="modal-image-container" id="modalImageContainer">
+                <!-- Image will be inserted here by JavaScript -->
+            </div>
             <p class="modal-body" id="modalBody"></p>
         </div>
     </div>
 
     <script>
+        // Helper function for debounce
+        function debounce(func, delay) {
+            let timeout;
+            return function(...args) {
+                const context = this;
+                clearTimeout(timeout);
+                timeout = setTimeout(() => func.apply(context, args), delay);
+            };
+        }
+
         // Xử lý cuộn ngang cho các card (áp dụng cho Giới thiệu, Nghệ thuật, Lịch trình)
-        // Loại bỏ phần Làng nghề khỏi đây để quản lý cuộn riêng
-        document.querySelectorAll('.card-wrapper:not(.circular-gallery-wrapper):not(.village-scroll)').forEach(wrapper => { // Cập nhật selector
+        document.querySelectorAll('.card-wrapper:not(.circular-gallery-wrapper):not(.village-scroll)').forEach(wrapper => {
             let isDown = false;
             let startX;
             let scrollLeft;
@@ -1503,16 +1871,44 @@
         const closeButton = document.querySelector(".close-button");
         const modalTitle = document.getElementById("modalTitle");
         const modalBody = document.getElementById("modalBody");
+        const modalImageContainer = document.getElementById("modalImageContainer");
 
-        // For "read-more" links (Giới thiệu, Làng nghề, Nghệ thuật)
+        // Hàm để reset modal content
+        function resetModalContent() {
+            modalTitle.textContent = '';
+            modalBody.innerHTML = '';
+            modalImageContainer.innerHTML = ''; // Xóa ảnh khi đóng/mở modal mới
+        }
+
+        // Hàm để thêm nhiều ảnh vào modal
+        function addImagesToModal(imageUrls, altText) {
+            if (imageUrls) {
+                const urls = imageUrls.split(','); // Tách chuỗi URL thành mảng
+                urls.forEach(url => {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = url.trim(); // Loại bỏ khoảng trắng thừa
+                    imgElement.alt = altText;
+                    modalImageContainer.appendChild(imgElement);
+                });
+            }
+        }
+
+        // For "read-more" links (Giới thiệu, Làng nghề, Nghệ thuật, Ẩm thực)
         document.querySelectorAll(".read-more").forEach(button => {
             button.addEventListener("click", function(event) {
                 event.preventDefault(); // Prevent default link behavior
+                resetModalContent(); // Reset content before opening
+
                 const title = this.getAttribute("data-title");
                 const content = this.getAttribute("data-content");
+                // Lấy thuộc tính data-images thay vì data-image
+                const imageUrls = this.getAttribute("data-images") || this.getAttribute("data-image"); 
 
                 modalTitle.textContent = title;
                 modalBody.textContent = content;
+
+                addImagesToModal(imageUrls, title); // Gọi hàm mới để thêm ảnh
+                
                 modal.style.display = "flex"; // Use flex to center the modal
             });
         });
@@ -1520,30 +1916,37 @@
         // For Masonry cards (Điểm tham quan)
         document.querySelectorAll(".attraction-card").forEach(card => {
             card.addEventListener("click", function() {
+                resetModalContent(); // Reset content before opening
+
                 const title = this.getAttribute("data-title");
                 const content = this.getAttribute("data-content");
+                // Lấy thuộc tính data-images mới. Nếu không có, fallback về src của ảnh hiện tại.
+                const imageUrls = this.getAttribute("data-images") || this.querySelector('.card-image img').src; 
 
                 modalTitle.textContent = title;
                 modalBody.textContent = content;
+
+                addImagesToModal(imageUrls, title); // Gọi hàm mới để thêm ảnh
+
                 modal.style.display = "flex";
             });
         });
 
-
         closeButton.addEventListener("click", function() {
             modal.style.display = "none";
+            resetModalContent(); // Reset content when closing
         });
 
         // Close the modal when clicking outside of it
         window.addEventListener("click", function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+                resetModalContent(); // Reset content when closing
             }
         });
 
         // Scroll buttons functionality (áp dụng cho Giới thiệu, Nghệ thuật, Lịch trình)
-        // Loại bỏ phần Làng nghề khỏi đây để quản lý cuộn riêng
-        document.querySelectorAll('.scroll-container:not(.circular-gallery-container):not(.village-scroll-container)').forEach(container => { // Cập nhật selector
+        document.querySelectorAll('.scroll-container:not(.circular-gallery-container):not(.village-scroll-container)').forEach(container => {
             const prevBtn = container.querySelector('.scroll-btn.prev');
             const nextBtn = container.querySelector('.scroll-btn.next');
             const cardWrapper = container.querySelector('.card-wrapper');
@@ -1551,7 +1954,7 @@
             if (prevBtn) {
                 prevBtn.addEventListener('click', () => {
                     cardWrapper.scrollBy({
-                        left: -300, // Adjust scroll amount as needed
+                        left: -cardWrapper.clientWidth / 2, // Scroll half of the wrapper width
                         behavior: 'smooth'
                     });
                 });
@@ -1560,7 +1963,7 @@
             if (nextBtn) {
                 nextBtn.addEventListener('click', () => {
                     cardWrapper.scrollBy({
-                        left: 300, // Adjust scroll amount as needed
+                        left: cardWrapper.clientWidth / 2, // Scroll half of the wrapper width
                         behavior: 'smooth'
                     });
                 });
@@ -1572,39 +1975,47 @@
             const prevBtn = container.querySelector('.scroll-btn.prev');
             const nextBtn = container.querySelector('.scroll-btn.next');
             const cardWrapper = container.querySelector('.circular-gallery-wrapper');
-            // Calculate card width + gap. Assuming 1rem = 16px. card min-width is 280px, gap is 1.5rem (24px)
-            const cardWidth = 280 + (1.5 * 16); 
+            
+            // Function to get current card width + gap dynamically
+            const getCardScrollAmount = () => {
+                const firstCard = cardWrapper.querySelector('.card');
+                if (firstCard) {
+                    const cardStyle = window.getComputedStyle(firstCard);
+                    const cardWidth = firstCard.offsetWidth;
+                    const gap = parseFloat(cardStyle.marginRight) || parseFloat(window.getComputedStyle(cardWrapper).gap);
+                    return cardWidth + gap;
+                }
+                return 300; // Fallback value
+            };
 
             if (prevBtn) {
                 prevBtn.addEventListener('click', () => {
+                    const scrollAmount = getCardScrollAmount();
                     cardWrapper.scrollBy({
-                        left: -cardWidth, // Scroll back one card
+                        left: -scrollAmount,
                         behavior: 'smooth'
                     });
                     // Circular logic for previous button
-                    // If scrolled past the beginning, jump to the end
                     if (cardWrapper.scrollLeft <= 0) {
-                        // A small timeout to allow smooth scroll to complete before jumping
                         setTimeout(() => {
                             cardWrapper.scrollLeft = cardWrapper.scrollWidth - cardWrapper.clientWidth;
-                        }, 300); // Match this with your smooth scroll duration
+                        }, 300);
                     }
                 });
             }
 
             if (nextBtn) {
                 nextBtn.addEventListener('click', () => {
+                    const scrollAmount = getCardScrollAmount();
                     cardWrapper.scrollBy({
-                        left: cardWidth, // Scroll forward one card
+                        left: scrollAmount,
                         behavior: 'smooth'
                     });
                     // Circular logic for next button
-                    // If scrolled past the end, jump to the beginning
                     if (cardWrapper.scrollLeft + cardWrapper.clientWidth >= cardWrapper.scrollWidth) {
-                        // A small timeout to allow smooth scroll to complete before jumping
                         setTimeout(() => {
                             cardWrapper.scrollLeft = 0;
-                        }, 300); // Match this with your smooth scroll duration
+                        }, 300);
                     }
                 });
             }
@@ -1635,11 +2046,18 @@
         // For Schedule cards (Lịch trình)
         document.querySelectorAll(".schedule-card").forEach(card => {
             card.addEventListener("click", function() {
+                resetModalContent(); // Reset content before opening
+
                 const month = this.getAttribute("data-month");
                 const scheduleContent = this.getAttribute("data-schedule");
+                // Lấy thuộc tính data-images mới. Nếu không có, fallback về src của ảnh hiện tại.
+                const imageUrls = this.getAttribute("data-images") || this.querySelector('.card-image img').src; 
 
                 modalTitle.textContent = "Lịch trình " + month;
                 modalBody.innerHTML = scheduleContent; // Sử dụng innerHTML vì nội dung có thẻ HTML
+
+                addImagesToModal(imageUrls, "Lịch trình " + month); // Gọi hàm mới để thêm ảnh
+
                 modal.style.display = "flex";
             });
         });
@@ -1653,7 +2071,6 @@
             let targetIndex = 0;
             let minDistance = Infinity;
 
-            // Tìm card gần trung tâm nhất trong viewport của wrapper
             cards.forEach((card, index) => {
                 const cardCenter = card.offsetLeft + (card.offsetWidth / 2);
                 const wrapperCenter = scrollLeft + (wrapperWidth / 2);
@@ -1665,12 +2082,10 @@
                 }
             });
 
-            // Cập nhật lớp 'centered'
             cards.forEach((card, index) => {
                 card.classList.toggle('centered', index === targetIndex);
             });
             
-            // Cuộn đến card trung tâm nếu không đang kéo
             if (!wrapper.isDragging) {
                 const targetCard = cards[targetIndex];
                 if (targetCard) {
@@ -1683,15 +2098,11 @@
             }
         }
         
-        // Track dragging state for smoother UX
-        let isDragging = false;
-
         // Apply centered card effect to "Làng nghề truyền thống" section
         const villageWrapper = document.querySelector('#village-cards');
-        const villageScrollContainer = document.querySelector('.village-scroll-container'); // Lấy container chứa nút
+        const villageScrollContainer = document.querySelector('.village-scroll-container');
 
         if (villageWrapper && villageScrollContainer) {
-            // Track drag state for better UX
             villageWrapper.isDragging = false;
             
             villageWrapper.addEventListener('mousedown', () => {
@@ -1703,19 +2114,14 @@
                 updateCenteredVillageCard(villageWrapper);
             });
             
-            villageWrapper.addEventListener('scroll', () => {
+            villageWrapper.addEventListener('scroll', debounce(() => {
                 if (!villageWrapper.isDragging) {
-                    // Thêm debounce để tránh gọi quá nhiều lần khi cuộn
-                    clearTimeout(villageWrapper.scrollTimeout);
-                    villageWrapper.scrollTimeout = setTimeout(() => {
-                        updateCenteredVillageCard(villageWrapper);
-                    }, 100); // Chờ 100ms sau khi dừng cuộn
+                    updateCenteredVillageCard(villageWrapper);
                 }
-            });
-            
+            }, 100)); // Debounce scroll event
+
             // Initial center on load
             setTimeout(() => {
-                // Cuộn đến card thứ 2 (index 1) để nó ở giữa khi tải trang
                 const initialCardIndex = 1; // Card "Làng đúc đồng Phường Đúc"
                 const initialCard = villageWrapper.querySelectorAll('.card')[initialCardIndex];
                 if (initialCard) {
@@ -1726,9 +2132,9 @@
             }, 100);
 
             // Update on window resize (to adjust for responsive changes)
-            window.addEventListener('resize', () => {
+            window.addEventListener('resize', debounce(() => {
                 updateCenteredVillageCard(villageWrapper);
-            });
+            }, 200)); // Debounce resize event
 
             // Add scroll button functionality for village section
             const villagePrevBtn = villageScrollContainer.querySelector('.scroll-btn.prev');
@@ -1737,7 +2143,7 @@
             if (villagePrevBtn) {
                 villagePrevBtn.addEventListener('click', () => {
                     villageWrapper.scrollBy({
-                        left: -300, // Adjust scroll amount as needed
+                        left: -villageWrapper.clientWidth / 2, // Scroll half of the wrapper width
                         behavior: 'smooth'
                     });
                 });
@@ -1746,12 +2152,38 @@
             if (villageNextBtn) {
                 villageNextBtn.addEventListener('click', () => {
                     villageWrapper.scrollBy({
-                        left: 300, // Adjust scroll amount as needed
+                        left: villageWrapper.clientWidth / 2, // Scroll half of the wrapper width
                         behavior: 'smooth'
                     });
                 });
             }
         }
+
+        // Hamburger menu toggle functionality
+        const mobileMenuToggle = document.getElementById('mobile-menu');
+        const mobileNavMenu = document.getElementById('mobile-nav-menu');
+        const desktopNavMenu = document.querySelector('.nav-menu-desktop');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mobileNavMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileNavMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                mobileNavMenu.classList.remove('active');
+            });
+        });
+
+        // Hide mobile menu and show desktop menu on resize if wider than 768px
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mobileMenuToggle.classList.remove('active');
+                mobileNavMenu.classList.remove('active');
+            }
+        });
     </script>
 </body>
 </html>
